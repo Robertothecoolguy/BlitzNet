@@ -1,0 +1,93 @@
+<form class="credit-card-contents">
+  <h2>Payment and Shipping</h2>
+  <h4>Account</h4>
+  <div class="input-group">
+    <div class="input-box">
+      <input type="text" placeholder="Full Name" required class="name" />
+      <i class="bi bi-person-fill"></i>
+    </div>
+  </div>
+  <div class="input-group">
+    <div class="input-box">
+      <input type="text" placeholder="Address" required class="name" />
+      <i class="bi bi-house-door-fill"></i>
+    </div>
+  </div>
+  <div class="input-group">
+    <div class="input-box">
+      <input type="text" placeholder="City" required class="name" />
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+  </div>
+  <div class="input-group">
+    <div class="input-box">
+      <h4>Payment Details</h4>
+      <input type="radio" placeholder="pay" class="radio" id="bb1" />
+      <label for="bb1"
+        ><span
+          ><i class="bi2 bi-credit-card-2-back-fill"></i>Credit Card</span
+        ></label
+      >
+      <input type="radio" placeholder="pay" class="radio" id="bb2" />
+      <label for="bb2"
+        ><span><i class="bi2 bi-google"></i>Pay</span></label
+      >
+      <input type="radio" placeholder="pay" class="radio" id="bb3" />
+      <label for="bb3"
+        ><span><i class="bi2 bi-bank2"></i>Bank</span></label
+      >
+      <input type="radio" placeholder="pay" class="radio" id="bb4" />
+      <label for="bb4"
+        ><span><i class="bi2 bi-apple"></i>Pay</span></label
+      >
+    </div>
+  </div>
+  <div class="input-group">
+    <div class="input-box">
+      <input type="tel" class="name" placeholder="Account Number" required />
+      <i class="bi bi-credit-card-2-back"></i>
+    </div>
+  </div>
+  <div class="input-group">
+    <div class="input-box">
+      <input type="tel" class="name" placeholder="Routing Number" required />
+      <i class="bi bi-credit-card-2-front-fill"></i>
+    </div>
+  </div>
+  <div class="input-group">
+    <div class="input-box">
+      <input type="number" class="name" placeholder="Bank Name" required />
+      <i class="bi bi-calendar3"></i>
+    </div>
+  </div>
+  <div class="price-wrapper">
+    <div class="price-nav">
+      <a href="/my-orders.html">Modify order</a>
+      <h2 class="price-details-title">Price Details</h2>
+    </div>
+    <div class="price-details">
+      <div class="total-product-container">
+        <p class="total-product-price-title">Total Product Price</p>
+        <p class="total-product-price">$0</p>
+      </div>
+      <div class="total-sub-container">
+        <div class="total-subscriptions-title">Total Subscriptions</div>
+        <div class="total-subscriptions">$0/month</div>
+      </div>
+      <div class="total-savings-container">
+        <p class="total-savings-title">Bundle Savings</p>
+        <p class="total-savings">$0</p>
+      </div>
+      <div class="shipping-container">
+        <p class="shipping-title">Shipping</p>
+        <p class="shipping">$0</p>
+      </div>
+      <div class="total-order-container">
+        <h2 class="order-total-title">Order Total</h2>
+        <h2 class="order-total">$0</h2>
+      </div>
+      <div class="month-starts">(month starts when activated)</div>
+    </div>
+    <button class="pay-now-button" type="submit">Pay Now</button>
+  </div>
+</form>

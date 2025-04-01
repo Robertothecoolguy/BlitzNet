@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="sign-up.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="wrapper">
+      <div class="logo-title">
+        <h2>Create a BlitzNet Account</h2>
+        <p>Be a part of excellence</p>
+      </div>
+      <form class="sign-up-contents" action="" method="post">
+        <h4>Personal Details</h4>
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" placeholder="Full Name" required class="name" />
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Username" required class="name" />
+            <i class="bi bi-person-vcard-fill"></i>
+          </div>
+        </div>
+        <h4>Sign-up Credentials</h4>
+        <div class="input-group-1">
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Email Address"
+              required
+              class="name" />
+            <i class="bi bi-house-door-fill"></i>
+          </div>
+        </div>
+        <div class="input-group-1">
+          <div class="input-box">
+            <input type="text" placeholder="Password" required class="name" />
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+        </div>
+        <section>
+          <input type="checkbox" id="check" />
+          <label for="check">Remember me</label>
+        </section>
+        <button class="next-button" type="submit">Next</button>
+      </form>
+    </div>
+    <div class="wrapper confirm">
+      <div class="logo-title-2">
+        <h2>Verify your Email</h2>
+        <p>
+          Enter the confirmation code we sent you to
+          <b>astralexplorer@gmail.com</b>
+        </p>
+        <a class="resend" href="">(Resend email)</a>
+        <a class="go-back" href="">Go back to Sign Up</a>
+      </div>
+      <form class="sign-up-contents" action="javascript:void(0)">
+        <h4>Enter or paste your code here:</h4>
+        <div class="auth-pin-wrap input-group">
+          <input type="text" class="code-input" required="" />
+          <input type="text" class="code-input" required="" />
+          <input type="text" class="code-input" required="" />
+          <input type="text" class="code-input" required="" />
+          <input type="text" class="code-input" required="" />
+          <input type="text" class="code-input" required="" />
+        </div>
+        <button class="next-button-2" type="submit">Next</button>
+      </form>
+    </div>
+    <div id="sign-in-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <!-- Moved confirmModal to the end of body -->
+    <div class="confirm-modal" id="confirmModal">
+      <div class="cbox">
+        <h1 class="title">Account Created!</h1>
+        <p class="explain">Enter the code from your email for confirmation.</p>
+      </div>
+    </div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="sign-in.js"></script>
+    <script src="sign-up.js"></script>
+  </body>
+</html>

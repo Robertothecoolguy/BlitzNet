@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Payment Method</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Select Payment Method</h2>
+        <span class="close-btn">&times;</span>
+      </div>
+      <p>Select or add a new payment method for this order.</p>
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" name="payment-method" checked />
+          <i class="bi bi-bank2"></i>
+          <span>** 4444</span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment-method" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
+            alt="Visa"
+            class="card-logo"
+          />
+          <span>** 4242</span>
+        </label>
+      </div>
+      <div class="buttons">
+        <button class="add-btn">Add new payment method</button>
+      </div>
+    </div>
+  </body>
+</html>

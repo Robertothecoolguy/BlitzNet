@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlitzNet</title>
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta
+      name="google-signin-client_id"
+      content="
+    981923150238-i71lds8e1lm59hdeq6o42u9sfgje04m9.apps.googleusercontent.com" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+      <img class="ellipse" src="Ellipse 7.svg" alt="" />
+      <div class="hero-flex-container">
+        <img class="wifi-symbol" src="/pngegg (12) 1.svg" alt="" />
+        <div class="hero-text">
+          <h2 class="hero-h2">High-Speed Data and Internet</h2>
+          <p class="hero-p">
+            Get speeds up to 100-300 mbps (4 to 12 times faster than the average
+            internet speed) at prices starting with a $100.00 one time payment +
+            $30/month. Cancel anytime.
+          </p>
+          <div class="hero-button-container">
+            <a href="https://youtube.com"
+              ><button class="hero-button black">Shop Now</button></a
+            >
+            <a href="https://youtube.com"
+              ><button class="hero-button grey">How it Works</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="satellite-box">
+      <img class="satellite" src="/pngegg 1.svg" alt="" />
+    </div>
+    <section class="sub-hero">
+      <div class="learn-rec">
+        <div class="learn-text">
+          <h3 class="learn-h3">Speeds up to 300 mbps and no dead zones.</h3>
+          <p class="learn-p">The power of BlitzNet service from outer space.</p>
+        </div>
+        <a href="https://youtube.com"
+          ><button class="learn-more">Learn More</button></a
+        >
+      </div>
+    </section>
+    <section id="product-section" class="product-section">
+      <h2 class="product-title">Products</h2>
+      <div class="shop">
+        <div class="product-card">
+          <img src="/Layer 1.svg" alt="" class="product-img" />
+          <h3 class="card-title">Modem</h3>
+          <div class="pricing-part">
+            <h1 class="card-price">$100.00</h1>
+            <h3 class="card-sub-title">
+              $30/month <span class="span-1">subscription</span>
+            </h3>
+          </div>
+          <div class="product-benefits">
+            <li>$100.00 one time payment for modem</li>
+            <li>100-300mbps (depends on your area)</li>
+            <li>Tri-Band Wi-Fi</li>
+            <li>Wi-Fi 6E</li>
+            <li>Self Setup</li>
+            <li>MU-MIMO Technology</li>
+            <li>Zero Latency</li>
+            <li>350 feet 6E signal range</li>
+          </div>
+          <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="/image 1.svg" alt="" class="product-img" />
+          <h3 class="card-title">Phone Service</h3>
+          <div class="pricing-part">
+            <h1 class="card-price">
+              $30/month <span class="span-2">subscription</span>
+            </h1>
+          </div>
+          <div class="product-benefits">
+            <li>200-300mbps (depends on your area)</li>
+            <li>Unlimited 5G Data throughout the world</li>
+            <li>Affordable family plans</li>
+            <li>No hidden fees. Cancel anytime</li>
+            <li>4K Video Streaming</li>
+            <li>Zero Latency</li>
+            <li>Global Roaming</li>
+          </div>
+          <button class="add-to-cart" data-product-id="2">Add to Cart</button>
+        </div>
+
+        <div class="card-3" id="card-3">
+          <div class="product-card-bundle">
+            <div class="img-box">
+              <img src="/Layer 1.svg" alt="" class="product-img" />
+              <img src="/image 1.svg" alt="" class="product-img" />
+            </div>
+            <h3 class="card-title">Modem + Phone Service</h3>
+            <h1 class="card-price">$90.00</h1>
+            <h3 class="card-sub-title">
+              $50/month <span class="span-3">subscription</span>
+            </h3>
+            <div class="bundle-benefits-box">
+              <div class="bundle-benefits-modem">
+                <h3 class="card-title">Modem</h3>
+                <div class="bundle-list-box">
+                  <li>$100.00 one time payment for modem</li>
+                  <li>100-300mbps (depends on your area)</li>
+                  <li>Tri-Band Wi-Fi</li>
+                  <li>Wi-Fi 6E</li>
+                  <li>Self Setup</li>
+                  <li>MU-MIMO Technology</li>
+                  <li>Zero Latency</li>
+                  <li>350 feet 6E signal range</li>
+                </div>
+              </div>
+              <div class="bundle-benefits-phone-service">
+                <h3 class="card-title">Phone Service</h3>
+                <div class="bundle-list-box">
+                  <li>200-300mbps (depends on your area)</li>
+                  <li>Unlimited 5G Data throughout the world</li>
+                  <li>Affordable family plans</li>
+                  <li>No hidden fees. Cancel anytime</li>
+                  <li>4K Video Streaming</li>
+                  <li>Zero Latency</li>
+                  <li>Global Roaming</li>
+                </div>
+              </div>
+            </div>
+            <button id="bundle-button">Bundle Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="customer-reviews">
+      <h2 class="customer-reviews-title">Customer Reviews:</h2>
+      <div class="video-container">
+        <input id="ch" type="checkbox" />
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+
+        <div class="see-more-videos">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/gf8mCl1ycBQ?si=jTqODYtFxiVgCdCx"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <div class="see-more-button-box">
+          <label for="ch" class="see-more-button">See More</label>
+        </div>
+      </div>
+    </section>
+    <section class="frequently-asked-questions">
+      <h2 class="frequently-asked-questions-title">
+        Frequently Asked Questions:
+      </h2>
+      <div class="question-container">
+        <input id="ch2" type="checkbox" />
+        <div class="qna">
+          <h3 class="question">What is considered high-speed internet?</h3>
+          <p class="answer">
+            Speeds of 100 mbps and faster are the gold standard for good
+            internet speed, especially for multi-device households.
+          </p>
+        </div>
+        <div class="qna">
+          <h3 class="question">
+            Can I keep my number when switching to BlitzNet?
+          </h3>
+          <p class="answer">
+            Yes, just provide your current number during the sign-up process and
+            we will take care of the rest.
+          </p>
+        </div>
+        <div class="qna">
+          <h3 class="question">
+            What are the options for family plans or adding lines?
+          </h3>
+          <p class="answer">Here’s a breakdown:</p>
+          <li class="list-answer">First line: $30/month</li>
+          <li class="list-answer">Additional lines each: $20/month</li>
+        </div>
+        <div class="see-more-questions">
+          <div class="qna">
+            <h3 class="question">What happens if I move?</h3>
+            <p class="answer">
+              BlitzNet serves the whole world. Even if you move to a different
+              country, that does not affect your data or internet plan.
+            </p>
+          </div>
+          <div class="qna">
+            <h3 class="question">Are there any hidden fees?</h3>
+            <p class="answer">
+              No, we are transparent about all our fees. We will keep you
+              up-to-date if you are about to see any changes for tax or
+              regulatory fees
+            </p>
+          </div>
+          <div class="qna">
+            <h3 class="question">
+              What should I do if my internet or data goes down?
+            </h3>
+            <p class="answer">
+              With our state-of-the-art chips and satellites you will never
+              experience our service going down.
+            </p>
+          </div>
+        </div>
+        <div class="see-more-button-box-2">
+          <label for="ch2" class="see-more-button-2">See More</label>
+        </div>
+      </div>
+    </section>
+
+    <div id="sign-in-placeholder"></div>
+    <div id="footer-placeholder"></div>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="footer-modal.js"></script>
+    <script src="sign-in.js"></script>
+  </body>
+</html>

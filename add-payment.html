@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/add-payment.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta
+      name="google-signin-client_id"
+      content="981923150238-i71lds8e1lm59hdeq6o42u9sfgje04m9.apps.googleusercontent.com" />
+    <title>Add Payment Method</title>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <form action="" method="post" class="wrapper credit-card-layout">
+      <h2>Add Payment Method</h2>
+      <h4>Account</h4>
+      <div class="input-group">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" required class="name" />
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Name on Card" required class="name" />
+          <i class="bi bi-person-vcard-fill"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="input-box">
+          <input type="text" placeholder="Address" required class="name" />
+          <i class="bi bi-house-door-fill"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="input-box">
+          <input type="text" placeholder="City" required class="name" />
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+      </div>
+      <div class="input-group payment-details">
+        <div class="input-box">
+          <h4>Payment Details</h4>
+          <input type="radio" class="radio" id="bc1" checked />
+          <label for="bc1"
+            ><span
+              ><i class="bi2 bi-credit-card-2-back-fill"></i>Credit Card</span
+            ></label
+          >
+          <input type="radio" class="radio" id="bc2" />
+          <label for="bc2"
+            ><span><i class="bi2 bi-google"></i>Pay</span></label
+          >
+          <input type="radio" class="radio" id="bc3" />
+          <label for="bc3"
+            ><span><i class="bi2 bi-bank2"></i>Bank</span></label
+          >
+          <input type="radio" class="radio" id="bc4" />
+          <label for="bc4"
+            ><span><i class="bi2 bi-apple"></i>Pay</span></label
+          >
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="input-box">
+          <input
+            type="tel"
+            class="name"
+            placeholder="Card Number 1111-2222-3333-4444"
+            required />
+          <i class="bi bi-credit-card-2-back"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="input-box">
+          <input type="tel" class="name" placeholder="CVC 632" required />
+          <i class="bi bi-credit-card-2-front-fill"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="input-box">
+          <input type="number" class="name" placeholder="EXP Month" required />
+          <i class="bi bi-calendar3"></i>
+        </div>
+        <div class="input-box">
+          <input type="number" class="name" placeholder="EXP Year" required />
+          <i class="bi bi-calendar4"></i>
+        </div>
+      </div>
+      <button class="pay-now-button" type="submit">
+        Add & Turn On Autopay
+      </button>
+    </form>
+
+    <div id="sign-in-placeholder"></div>
+    <div id="footer-placeholder"></div>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="sign-in.js"></script>
+    <script src="my-orders.js"></script>
+    <script src="/add-payment.js"></script>
+  </body>
+</html>

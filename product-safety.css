@@ -1,0 +1,109 @@
+.terms {
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  width: calc(40% + 20px);
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  background: #6e6e6e;
+  box-shadow: 0 0 20px #f8f9fb;
+}
+
+body {
+  background-color: #2e2e2e2a;
+}
+
+.closebtn {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+}
+
+.bi-x {
+  font-size: 24px;
+  color: #fff;
+}
+
+.ttitle {
+  justify-self: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.white-container {
+  margin-top: 10px;
+  height: 60%;
+  padding: 20px;
+  padding-block: 10px;
+  box-shadow: inset 0px 0px 10px rgba(49, 49, 49, 0.5);
+  background: white;
+  width: 85%;
+  align-self: center;
+  overflow-y: scroll;
+}
+
+.sub-texplain {
+  margin-bottom: 30px;
+}
+
+.sub {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+.texplain {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #2e2e2e;
+}
+
+.bottom-section {
+  width: 85%;
+  margin-bottom: 20px;
+}
+
+.finish-button {
+  color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  justify-self: center;
+  font-weight: bold;
+  height: 3rem;
+  place-content: center;
+  width: 7rem;
+  background: #5c5c5c00;
+}
+
+.mid-bottom-section {
+  margin-top: 10px;
+  position: relative;
+  width: 85%;
+}
+
+#checkbox1 {
+  position: absolute;
+  top: 3px;
+  accent-color: #cc0000;
+}
+.chlabel {
+  margin-left: 18px;
+  color: #f3f3f3;
+}
+
+.top-part {
+  background: #535353;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+b {
+  color: #2e2e2e;
+}

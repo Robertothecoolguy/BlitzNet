@@ -1,0 +1,289 @@
+.logo-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.logo-title-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  height: 375px;
+  justify-content: space-between;
+  width: 60%;
+  padding: 25px;
+  padding-inline: 20px;
+  margin-inline: auto;
+  margin-block: 50px;
+  background: linear-gradient(
+    to right,
+    #f8f9fb23,
+    #f8f9fb23,
+    #92929223,
+    #f8f9fb23,
+    #f8f9fb23
+  );
+  box-shadow: 0 0 20px #f8f9fb;
+  border-radius: 20px;
+}
+
+.wrapper h2 {
+  color: #f8f9fb;
+  font-size: 32px;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.wrapper h4 {
+  padding-bottom: 5px;
+  color: #f8f9fb;
+}
+
+.input-group {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 5px 0;
+  margin-bottom: 16px;
+}
+
+.input-group-1 {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 5px 0;
+}
+
+.input-box {
+  width: 100%;
+  margin-right: 12px;
+  position: relative;
+}
+
+.input-box:last-child {
+  margin-right: 0px;
+}
+
+.input-box .name {
+  padding: 14px 10px 14px 50px;
+  width: 100%;
+  border: 1px solid #0003;
+  outline: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  border-radius: 3px;
+
+  color: #333;
+}
+
+.input-box .name:focus {
+  -webkit-box-shadow: 0 0 2px 1px #f8f9fb;
+  -moz-box-shadow: 0 0 2px 1px #f8f9fb;
+  box-shadow: 0 0 2px 1px #f8f9fb;
+  border: 1px solid #f8f9fb;
+}
+
+.input-box .bi {
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: #333;
+  background: #f8f9fb;
+  border-radius: 2px 0 0 2px;
+  border: 1px solid #0003;
+  border-right: none;
+  font-size: 20px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.name:focus + .bi {
+  background: #f8f9fb;
+  border: none;
+  transition: 1s;
+}
+
+.radio {
+  display: none;
+}
+
+.input-box label {
+  width: 50%;
+  padding: 13px;
+  background: #fcfcfc;
+  display: block;
+  float: left;
+  text-align: center;
+  border: 1px solid #d6d6d6;
+}
+
+span,
+.bi2 {
+  color: #2e2e2e;
+}
+
+.next-button {
+  width: 9rem;
+  place-content: center;
+  background: #e0e3e7;
+  color: #333;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 2px 1px #f8f9fb;
+  -moz-box-shadow: 0 0 2px 1px #f8f9fb;
+  box-shadow: 0 0 2px 1px #f8f9fb;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.next-button:hover {
+  background: linear-gradient(to bottom, #ffffff, #cbcbcb);
+  color: #333;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 2px 1px #f8f9fb;
+  -moz-box-shadow: 0 0 2px 1px #f8f9fb;
+  box-shadow: 0 0 2px 1px #f8f9fb;
+}
+
+.next-button-2 {
+  width: 9rem;
+  place-content: center;
+  background: #2e2e2e23;
+  color: #333;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.next-button-2:hover {
+  cursor: default;
+}
+
+.resend {
+  color: #c5dedf;
+}
+
+.sign-up-contents {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+}
+
+.confirm-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position to overlay without affecting layout */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 2000; /* High z-index to appear above everything */
+}
+
+.confirm-modal.show {
+  display: flex; /* Show when active */
+}
+
+.cbox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0); /* Start at 0% size */
+  transform-origin: center;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+}
+
+.title {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.explain {
+  text-align: center;
+  color: white;
+}
+
+/* Animation for growing only */
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.confirm-modal.show .cbox {
+  animation: grow 0.3s ease forwards; /* Grow in 1s and stay */
+  background: purple;
+  padding: 25px;
+  height: 200px;
+  width: 500px;
+}
+
+.auth-pin-wrap {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.code-input {
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #f8f9fb23,
+    #f8f9fb23,
+    #92929223,
+    #f8f9fb23,
+    #f8f9fb23
+  );
+  box-shadow: 0 0 5px #f8f9fb8e;
+  min-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  outline: none;
+}
+
+.go-back {
+  margin-top: auto;
+  text-decoration: underline;
+  color: #c9b7d6;
+}
+
+/* Ensure wrapper confirm is hidden initially */
+.wrapper.confirm {
+  display: none;
+}
+
+/* Active state for wrapper confirm */
+.wrapper.confirm.active {
+  display: flex;
+}
+
+/* Initial wrapper hidden state when confirm is active */
+.wrapper.hidden {
+  display: none;
+}

@@ -1,0 +1,213 @@
+/* add-payment.css */
+.wrapper {
+  margin-block: 75px;
+  width: 45%;
+  padding: 25px;
+  margin-inline: auto;
+  background: linear-gradient(
+    to right,
+    #f8f9fb23,
+    #f8f9fb23,
+    #92929223,
+    #f8f9fb23,
+    #f8f9fb23
+  );
+  box-shadow: 0 0 20px #f8f9fb;
+  border-radius: 20px;
+  display: none; /* Hidden by default */
+}
+
+.wrapper.active {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  height: 710px;
+  margin-block: 50px;
+}
+
+.wrapper h2 {
+  color: #f8f9fb;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.wrapper h4 {
+  padding-bottom: 5px;
+  color: #f8f9fb;
+}
+
+.input-group {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 5px 0;
+}
+
+.input-box {
+  width: 100%;
+  margin-right: 12px;
+  position: relative;
+}
+
+.input-box:last-child {
+  margin-right: 0px;
+}
+
+.input-box .name {
+  padding: 14px 10px 14px 50px;
+  width: 100%;
+  border: 1px solid #0003;
+  outline: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  border-radius: 3px;
+  color: #333;
+}
+
+.input-box .name:focus {
+  -webkit-box-shadow: 0 0 2px 1px #f8f9fb;
+  -moz-box-shadow: 0 0 2px 1px #f8f9fb;
+  box-shadow: 0 0 2px 1px #f8f9fb;
+  border: 1px solid #f8f9fb;
+}
+
+.input-box .bi {
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: #333;
+  background: #f8f9fb;
+  border-radius: 2px 0 0 2px;
+  border: 1px solid #0003;
+  border-right: none;
+  font-size: 20px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.name:focus + .bi {
+  background: #f8f9fb;
+  border: none;
+  transition: 1s;
+}
+
+.radio {
+  display: none;
+}
+
+.input-box label {
+  width: 50%;
+  padding: 13px;
+  background: #fcfcfc;
+  display: block;
+  float: left;
+  text-align: center;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+}
+
+.wrapper .input-box label.radio-label-active {
+  background: #c9b7d6 !important; /* Purple highlight */
+  display: inline-block;
+}
+
+span,
+.bi2 {
+  color: #2e2e2e;
+}
+
+.bi2 {
+  margin-right: 1px;
+}
+.pay-now-button {
+  margin-top: 40px;
+  place-content: center;
+  width: 100%;
+  background: #e0e3e7;
+  color: #333;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 2px 1px #f8f9fb;
+  -moz-box-shadow: 0 0 2px 1px #f8f9fb;
+  box-shadow: 0 0 2px 1px #f8f9fb;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.pay-now-button:hover {
+  background: linear-gradient(to bottom, #ffffff, #cbcbcb);
+  color: #333;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 2px 1px #f8f9fb;
+  -moz-box-shadow: 0 0 2px 1px #f8f9fb;
+  box-shadow: 0 0 2px 1px #f8f9fb;
+}
+
+/* Styles for Google Pay and Apple Pay buttons */
+.google-pay-button {
+  display: flex;
+  margin: 20px auto;
+  font-size: 23px;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 16rem;
+  border-radius: 5px;
+  background: rgb(0, 0, 0);
+}
+
+.google-pay-button span {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.button-41 {
+  padding: 12px 26px;
+  border: 0;
+  transition: all 150ms ease-in-out;
+  border-radius: 2px;
+  color: #fff;
+  background-image: radial-gradient(
+    50% 115% at 50% -5%,
+    rgba(177, 20, 151, 0.11) 0%,
+    transparent 100%
+  );
+  box-shadow: inset 0 0px 10px 0px rgb(42, 42, 42),
+    inset 0px 5px 10px 0px rgb(63, 63, 63),
+    inset 0px 2px 5px 0px rgba(255, 255, 255, 0.14),
+    inset 0px 3px 20px 0px rgba(255, 255, 255, 0.11);
+}
+
+.button-41:active {
+  background-image: radial-gradient(
+    50% 115% at 50% -5%,
+    rgba(255, 255, 255, 0.11) 0%,
+    transparent 100%
+  );
+  box-shadow: inset 0 0px 10px 0px rgb(36, 27, 27),
+    inset 0px 5px 10px 0px rgb(63, 63, 63),
+    inset 0px 2px 5px 0px rgba(60, 48, 48, 0.14),
+    inset 0px 3px 20px 0px rgba(255, 255, 255, 0.11);
+}
+
+.google-pay-button img {
+  height: 28px;
+  margin-top: 2px;
+}
+
+.google-pay-button img.apple {
+  filter: invert(100%);
+  height: 23px;
+}

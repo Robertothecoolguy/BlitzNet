@@ -1,0 +1,9 @@
+.box {
+  background: rgb(95, 131, 40);
+  padding: 25px;
+  height: 200px;
+  place-content: center;
+}
+.explain {
+  text-align: center;
+}
