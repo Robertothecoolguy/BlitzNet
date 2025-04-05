@@ -1,36 +1,30 @@
-// Get elements for Edit Profile Modal
 const editProfileLink = document.getElementById("edit-profile-link");
 const editProfileModal = document.getElementById("editProfileModal");
 const closeEditBtn = document.getElementById("closeEditModal");
-
-// Edit Profile Modal Enhancements
 const changeButtons = document.querySelectorAll(".change-btn");
 const generateButton = document.querySelector(".generate-btn");
 const inputs = document.querySelectorAll(".einput-box input");
 const form = document.querySelector(".edit-sign-up-contents");
 const welcomeText = document.querySelector(".hero h2");
 
-// Show Edit Profile Modal and reset states
+// Edit Profile Modal logic
 editProfileLink.addEventListener("click", function (e) {
   e.preventDefault();
   editProfileModal.classList.add("show");
-  // Reset all inputs and buttons when modal opens
   inputs.forEach((input) => {
     const changeBtn = input.nextElementSibling.nextElementSibling;
     if (changeBtn.classList.contains("change-btn")) {
-      input.disabled = true; // Disable inputs with Change? button
-      changeBtn.classList.remove("hidden"); // Show all Change? buttons
-      input.value = ""; // Clear any previous input
+      input.disabled = true;
+      changeBtn.classList.remove("hidden");
+      input.value = "";
     }
   });
 });
 
-// Hide Edit Profile Modal when close button is clicked
 closeEditBtn.addEventListener("click", function () {
   editProfileModal.classList.remove("show");
 });
 
-// Close Edit Profile Modal when clicking outside the content
 editProfileModal.addEventListener("click", function (e) {
   if (e.target === editProfileModal) {
     editProfileModal.classList.remove("show");
@@ -39,10 +33,10 @@ editProfileModal.addEventListener("click", function (e) {
 
 changeButtons.forEach((btn) => {
   btn.addEventListener("click", function () {
-    btn.classList.add("hidden"); // Hide Change? button
-    const input = btn.previousElementSibling.previousElementSibling; // Get input
-    input.disabled = false; // Enable the input
-    input.focus(); // Focus on input for editing
+    btn.classList.add("hidden");
+    const input = btn.previousElementSibling.previousElementSibling;
+    input.disabled = false;
+    input.focus();
   });
 });
 
@@ -84,37 +78,115 @@ generateButton.addEventListener("click", function () {
   const randomDesc =
     descriptors[Math.floor(Math.random() * descriptors.length)];
   const newUsername = `${randomSpace}${randomDesc}`;
-  input.placeholder = newUsername; // Set new placeholder
-  input.value = ""; // Clear any user-entered value to prioritize placeholder
+  input.placeholder = newUsername;
+  input.value = "";
 });
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent form submission for demo
+  e.preventDefault();
   inputs.forEach((input) => {
     const changeBtn = input.nextElementSibling.nextElementSibling;
-    // If it’s a Change? button (not Generate), handle it
     if (changeBtn.classList.contains("change-btn")) {
       if (changeBtn.classList.contains("hidden")) {
-        changeBtn.classList.remove("hidden"); // Show Change? again after save (though reset on reopen)
-        input.disabled = true; // Disable input again after saving
+        changeBtn.classList.remove("hidden");
+        input.disabled = true;
       }
     }
-    // Determine what to save: user input or placeholder
     const newValue =
       input.value.trim() !== "" ? input.value.trim() : input.placeholder;
-    input.placeholder = newValue; // Update placeholder to persist
-    input.defaultPlaceholder = newValue; // Store as default
-    input.value = ""; // Clear input after saving
-
-    // Update h2 if it’s the Username field
+    input.placeholder = newValue;
+    input.defaultPlaceholder = newValue;
+    input.value = "";
     if (input.previousElementSibling.textContent === "Username") {
       welcomeText.textContent = `Welcome, ${newValue}`;
     }
   });
-  editProfileModal.classList.remove("show"); // Close modal after save
+  editProfileModal.classList.remove("show");
 });
 
-// Set initial default placeholders
 inputs.forEach((input) => {
   input.defaultPlaceholder = input.placeholder;
+});
+
+// Toggle Autopay functionality
+const toggleAutopayLink = document.querySelector(".toggle");
+const autopayStatus = document.querySelector(".span-2");
+
+// Load autopay state from localStorage or default to true
+let isAutopayOn =
+  localStorage.getItem("autopayState") === "false" ? false : true;
+
+// Set autopay state (UI and storage update)
+function setAutopayState() {
+  autopayStatus.textContent = isAutopayOn ? "On" : "Off";
+  autopayStatus.classList.toggle("on", isAutopayOn);
+  autopayStatus.classList.toggle("off", !isAutopayOn);
+  localStorage.setItem("autopayState", isAutopayOn); // Save state to localStorage
+}
+
+// Apply initial state
+setAutopayState();
+
+toggleAutopayLink.addEventListener("click", function (e) {
+  e.preventDefault();
+  isAutopayOn = !isAutopayOn;
+  setAutopayState();
+});
+
+// Edit Payment Method functionality
+const paymentMethodLink = document.querySelector(".payment-method");
+const paymentModal = document.getElementById("paymentModal");
+const closePaymentBtn = document.getElementById("closeModal");
+const savedModal = document.getElementById("savedModal");
+const paymentRadios = document.querySelectorAll(
+  ".payment-option input[type='radio']"
+);
+const add粮食Btn = document.querySelector(".add-btn");
+
+// Show payment modal when "Edit Payment Method" is clicked
+paymentMethodLink.addEventListener("click", function (e) {
+  e.preventDefault();
+  paymentModal.classList.add("show");
+});
+
+// Close payment modal
+closePaymentBtn.addEventListener("click", function () {
+  paymentModal.classList.remove("show");
+});
+
+// Close payment modal when clicking outside
+paymentModal.addEventListener("click", function (e) {
+  if (e.target === paymentModal) {
+    paymentModal.classList.remove("show");
+  }
+});
+
+// Load saved payment method from localStorage on page load
+const savedPaymentIndex = localStorage.getItem("selectedPaymentIndex");
+if (savedPaymentIndex !== null) {
+  paymentRadios[savedPaymentIndex].checked = true;
+}
+
+// Save selected payment method, show saved modal, and turn autopay on after modal hides
+paymentRadios.forEach((radio, index) => {
+  radio.addEventListener("click", function () {
+    localStorage.setItem("selectedPaymentIndex", index); // Save the index of the selected radio
+    paymentModal.classList.remove("show"); // Close payment modal
+    savedModal.classList.add("show"); // Show saved modal
+
+    setTimeout(() => {
+      savedModal.classList.remove("show"); // Hide saved modal after 2 seconds
+      // Switch autopay to "On" if it was "Off" after modal disappears
+      if (!isAutopayOn) {
+        isAutopayOn = true;
+        setAutopayState(); // Update UI and save to localStorage
+      }
+    }, 2000);
+  });
+});
+
+// Open add-payment.html when "Add new payment method" is clicked
+addPaymentBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "/add-payment.html";
 });

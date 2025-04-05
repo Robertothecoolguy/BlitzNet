@@ -159,6 +159,10 @@ span,
   box-shadow: 0 0 2px 1px #f8f9fb;
 }
 
+b {
+  color: white;
+}
+
 .next-button-2 {
   width: 9rem;
   place-content: center;
@@ -176,7 +180,7 @@ span,
 }
 
 .resend {
-  color: #c5dedf;
+  color: #c9b7d6;
 }
 
 .sign-up-contents {
@@ -262,6 +266,7 @@ span,
   );
   box-shadow: 0 0 5px #f8f9fb8e;
   min-height: 50px;
+  border-radius: 5px;
   text-align: center;
   font-size: 20px;
   outline: none;

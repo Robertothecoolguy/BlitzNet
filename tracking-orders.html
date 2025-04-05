@@ -18,12 +18,13 @@
   </head>
   <body>
     <div id="navbar-placeholder"></div>
-    <div class="body-nav">
-      <a href="/user-profile.html"
-        ><img class="back-arrow" src="/back arrow.svg" alt=""
-      /></a>
-      <h2 class="title">Order Tracking:</h2>
+
+    <div class="call-box">
+      <h1>Inquiries/Repairs/Returns?</h1>
+      <p>Call: 123-456-7890</p>
     </div>
+
+    <h2 class="motitle">Order Tracking</h2>
 
     <div class="container">
       <div class="invoice-box">
@@ -42,38 +43,32 @@
             <div class="ups">UPS # <b>1ZRV96945073245133</b></div>
           </div>
         </div>
-        <div class="progress-explain-container">
-          <div class="circle-box">
-            <div class="circle-1"></div>
+        <div class="circle-explain-container invoice-1">
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-clipboard-fill"></i>
               <h3>Order Placed</h3>
             </div>
           </div>
-          <div class="progress-bar-1"></div>
-          <div class="circle-box">
-            <div class="circle-2"></div>
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-box-seam-fill"></i>
               <h3>Order Shipped</h3>
             </div>
           </div>
-          <div class="progress-bar-2"></div>
-          <div class="circle-box">
-            <div class="circle-3"></div>
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-truck-front-fill"></i>
-              <h3>Out For Delivery</h3>
+              <h3>Out for Delivery</h3>
             </div>
           </div>
-          <div class="progress-bar-3"></div>
-          <div class="circle-box">
-            <div class="circle-4"></div>
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-house-check-fill"></i>
               <h3>Delivered</h3>
             </div>
           </div>
+          <span class="progress-bar invoice-1-bar"></span>
         </div>
         <a href="/tracking-orders.html" class="more-details">UPS Details</a>
       </div>
@@ -82,49 +77,133 @@
         <div class="tracking-nav">
           <div class="order-location">
             <div class="order-number">
-              Order: <span><b>1</b> SIM Card (Global Data)</span>
+              Return: <span><b>2</b> SIM Cards</span>
             </div>
             <div class="location">
-              Delivering to: <b>123 Main Street, Houston, TX 77568</b>
+              Returning to: <b>123 Velocity Lane, Tech City, TC 90210</b>
             </div>
           </div>
           <div class="expected-ups">
-            <div class="expected">Expected Arrival: <b>Feb 12, 2025</b></div>
+            <div class="expected">Expected Arrival: <b>Feb 15, 2025</b></div>
             <div class="ups">UPS # <b>1ZRV96945073245133</b></div>
           </div>
         </div>
-        <div class="progress-explain-container">
-          <div class="circle-box">
-            <div class="circle-1-b"></div>
+        <div class="circle-explain-container invoice-2">
+          <div class="explain-box">
             <div class="explained">
-              <i class="bi bi-clipboard-fill"></i>
-              <h3>Order Placed</h3>
+              <i class="bi bi-upc-scan"></i>
+              <h3>Finalizing</h3>
             </div>
           </div>
-          <div class="progress-bar-1-b"></div>
-          <div class="circle-box">
-            <div class="circle-2-b"></div>
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-box-seam-fill"></i>
-              <h3>Order Shipped</h3>
+              <h3>Return Shipped</h3>
             </div>
           </div>
-          <div class="progress-bar-2-b"></div>
-          <div class="circle-box">
-            <div class="circle-3-b"></div>
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-truck-front-fill"></i>
-              <h3>Out For Delivery</h3>
+              <h3>Picked Up</h3>
             </div>
           </div>
-          <div class="progress-bar-3-b"></div>
-          <div class="circle-box">
-            <div class="circle-4-b"></div>
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-inbox-fill"></i>
+              <h3>Dropped Off</h3>
+            </div>
+          </div>
+          <span class="progress-bar invoice-2-bar"></span>
+        </div>
+        <a href="/tracking-orders.html" class="more-details">UPS Details</a>
+      </div>
+
+      <div class="invoice-box">
+        <div class="tracking-nav">
+          <div class="order-location">
+            <div class="order-number">
+              Repairing: <span><b>1</b> BlitzNet Modem</span>
+            </div>
+            <div class="location">
+              Repairing at: <b>123 Velocity Lane, Tech City, TC 90210</b>
+            </div>
+          </div>
+          <div class="expected-ups">
+            <div class="expected">Expected Arrival: <b>Feb 20, 2025</b></div>
+            <div class="ups">UPS # <b>1ZRV96945073245133</b></div>
+          </div>
+        </div>
+        <div class="circle-explain-container invoice-3">
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-tools"></i>
+              <h3>Repairing</h3>
+            </div>
+          </div>
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-box-seam-fill"></i>
+              <h3>Product Shipped</h3>
+            </div>
+          </div>
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-truck-front-fill"></i>
+              <h3>Picked Up</h3>
+            </div>
+          </div>
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-inbox-fill"></i>
+              <h3>Dropped Off</h3>
+            </div>
+          </div>
+          <span class="progress-bar invoice-3-bar"></span>
+        </div>
+        <a href="/tracking-orders.html" class="more-details">UPS Details</a>
+      </div>
+
+      <div class="invoice-box">
+        <div class="tracking-nav">
+          <div class="order-location">
+            <div class="order-number">
+              Sending back: <span><b>1</b> BlitzNet Modem</span>
+            </div>
+            <div class="location">
+              Sending to: <b>123 Main Street, Houston, TX 77568</b>
+            </div>
+          </div>
+          <div class="expected-ups">
+            <div class="expected">Expected Arrival: <b>Feb 25, 2025</b></div>
+            <div class="ups">UPS # <b>1ZRV96945073245133</b></div>
+          </div>
+        </div>
+        <div class="circle-explain-container invoice-4">
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-building-fill-gear"></i>
+              <h3>Repair Dept</h3>
+            </div>
+          </div>
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-box-seam-fill"></i>
+              <h3>Repair Shipped</h3>
+            </div>
+          </div>
+          <div class="explain-box">
+            <div class="explained">
+              <i class="bi bi-truck-front-fill"></i>
+              <h3>Out for Delivery</h3>
+            </div>
+          </div>
+          <div class="explain-box">
             <div class="explained">
               <i class="bi bi-house-check-fill"></i>
               <h3>Delivered</h3>
             </div>
           </div>
+          <span class="progress-bar invoice-4-bar"></span>
         </div>
         <a href="/tracking-orders.html" class="more-details">UPS Details</a>
       </div>
@@ -134,6 +213,8 @@
     <div id="footer-placeholder"></div>
     <script src="navbar.js"></script>
     <script src="footer.js"></script>
+    <script src="footer-modal.js"></script>
     <script src="sign-in.js"></script>
+    <script src="my-orders.js"></script>
   </body>
 </html>

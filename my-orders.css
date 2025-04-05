@@ -33,6 +33,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 30% 60% 10%;
+  margin-bottom: 40px;
   height: 200px;
   padding: 20px;
   background: linear-gradient(
@@ -277,6 +278,7 @@
 .next-row {
   margin-top: 40px;
   margin-bottom: 50px;
+  margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;

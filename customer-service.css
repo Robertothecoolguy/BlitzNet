@@ -1,29 +1,15 @@
-.body-nav {
-  margin-top: 40px;
-  width: 80%;
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .title {
-  justify-self: center;
-}
-
-.back-arrow {
-  height: 30px;
-  margin-top: 4px;
-  margin-right: auto;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .main-box {
   margin-inline: auto;
-  margin-top: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 80%;
-  height: 700px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   column-gap: 4%;
 }
 
