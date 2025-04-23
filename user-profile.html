@@ -23,7 +23,6 @@
     <div id="navbar-placeholder"></div>
 
     <section class="hero">
-      <img class="ellipse" src="Ellipse 7.svg" alt="" />
       <h2>Welcome, astralExplorer</h2>
       <div class="mid-hero">
         <div class="dashboard-section">
@@ -35,52 +34,29 @@
           <a href="/customer-service.html" class="box four">Customer Service</a>
           <a href="index.html#product-section" class="box five">Shopping</a>
         </div>
-        <style>
-          .sphere-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .sphere {
-            position: relative;
-            width: 300px; /* Larger sphere */
-            height: 300px;
-            transform-style: preserve-3d;
-          }
 
-          .dot {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(
-              255,
-              255,
-              255,
-              0.7
-            ); /* Slightly transparent white */
-            border-radius: 50%;
-            transform-origin: center;
-          }
-        </style>
         <div class="sphere-box">
           <div class="sphere" id="sphere"></div>
         </div>
 
         <script>
           const sphere = document.getElementById("sphere");
-          const radius = 150; // Half of 300px sphere
 
           // Function to place dots in a clustered shape
-          function addContinentDots(centerTheta, centerPhi, spread, numDots) {
+          function addContinentDots(
+            centerTheta,
+            centerPhi,
+            spread,
+            numDots,
+            radius
+          ) {
             for (let i = 0; i < numDots; i++) {
               const dot = document.createElement("div");
               dot.className = "dot";
 
-              // Random offset within a continent's spread
               const theta = centerTheta + (Math.random() - 0.5) * spread;
-              const phi = centerPhi + (Math.random() - 0.5) * spread * 0.5; // Less vertical spread
+              const phi = centerPhi + (Math.random() - 0.5) * spread * 0.5;
 
-              // Convert spherical to Cartesian coordinates
               const x = radius * Math.sin(phi) * Math.cos(theta);
               const y = radius * Math.sin(phi) * Math.sin(theta);
               const z = radius * Math.cos(phi);
@@ -93,21 +69,16 @@
           }
 
           // Create continents
-          function createEarthDots() {
-            // North America: Centered around 40°N, 100°W
-            addContinentDots(-1.745, 0.698, 0.8, 40); // -100° longitude, 40° latitude
+          function createEarthDots(radius) {
+            // Clear existing dots
+            sphere.innerHTML = "";
 
-            // South America: Centered around 15°S, 60°W
-            addContinentDots(-1.047, 2.879, 0.6, 30); // -60° longitude, -15° latitude
-
-            // Africa: Centered around 0°, 20°E
-            addContinentDots(0.349, 1.571, 0.9, 50); // 20° longitude, 0° latitude
-
-            // Europe/Asia: Centered around 50°N, 60°E
-            addContinentDots(1.047, 0.524, 1.2, 60); // 60° longitude, 50° latitude
-
-            // Australia: Centered around 25°S, 135°E
-            addContinentDots(2.356, 2.007, 0.4, 20); // 135° longitude, -25° latitude
+            // Add new dots with updated radius
+            addContinentDots(-1.745, 0.698, 0.8, 40, radius); // North America
+            addContinentDots(-1.047, 2.879, 0.6, 30, radius); // South America
+            addContinentDots(0.349, 1.571, 0.9, 50, radius); // Africa
+            addContinentDots(1.047, 0.524, 1.2, 60, radius); // Europe/Asia
+            addContinentDots(2.356, 2.007, 0.4, 20, radius); // Australia
           }
 
           // Random rotation
@@ -115,17 +86,35 @@
             const xAngle = Math.random() * 360;
             const yAngle = Math.random() * 360;
             const zAngle = Math.random() * 360;
-            sphere.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg) rotateZ(${zAngle}deg)`;
+            sphere.style.transform = `rotateX(
+              ${xAngle}deg) rotateY(${yAngle}deg) rotateZ(${zAngle}deg
+            )`;
             sphere.style.transition = "transform 3s ease";
-
             setTimeout(rotateSphere, 3000);
           }
 
-          // Initialize
-          createEarthDots();
+          // Initialize sphere with current size
+          function initializeSphere() {
+            const radius = sphere.offsetWidth / 2; // Dynamically get radius
+            createEarthDots(radius);
+          }
+
+          // Call initialize on load
+          initializeSphere();
           rotateSphere();
+
+          // Update sphere on window resize
+          let resizeTimeout;
+          window.addEventListener("resize", () => {
+            // Debounce to avoid excessive updates
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+              initializeSphere(); // Recreate dots with new radius
+            }, 100); // 100ms delay to reduce performance impact
+          });
         </script>
       </div>
+
       <div class="amount-due-box">
         <p>$0</p>
         <h3>Amount Due <span class="span-1">on February 9, 2025</span></h3>
@@ -135,6 +124,15 @@
         </div>
       </div>
       <a class="payment-method">Edit Payment Method</a>
+      <div class="dashboard-section ds2">
+        <a href="" class="box one" id="edit-profile-link">Edit Profile</a>
+        <a href="/modify-subscriptions.html" class="box two"
+          >Modify Subscriptions</a
+        >
+        <a href="/tracking-orders.html" class="box three">Tracking/Orders</a>
+        <a href="/customer-service.html" class="box four">Customer Service</a>
+        <a href="index.html#product-section" class="box five">Shopping</a>
+      </div>
     </section>
 
     <section class="frequently-asked-questions">

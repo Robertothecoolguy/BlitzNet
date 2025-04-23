@@ -6,19 +6,22 @@
 .main-box {
   margin-inline: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 80%;
+  height: 100%;
   margin-top: 50px;
   margin-bottom: 100px;
-  column-gap: 4%;
+  gap: 50px;
 }
 
 .box {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
   align-items: center;
   row-gap: 20px;
-  width: 28%;
+  width: 350px;
   padding: 20px;
   height: 400px;
   background: linear-gradient(
@@ -34,12 +37,25 @@
   border-radius: 20px;
 }
 
+.box i {
+  margin-inline: auto;
+}
+
+.box h2 {
+  margin-inline: auto;
+}
+
+.box p {
+  margin-inline: auto;
+}
+
 .button-cs {
   width: 10em;
   place-content: center;
   font-size: 20px;
   font-weight: 600;
   height: 2em;
+  margin-inline: auto;
   cursor: pointer;
   border: none;
 }
@@ -70,4 +86,41 @@ i {
 .three button {
   background: #a66ad0;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 417px) {
+  .main-box {
+    width: 95%;
+  }
+  .box {
+    width: 310px;
+  }
+
+  .box h2 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .box {
+    width: 270px;
+    row-gap: 0px;
+    height: 300px;
+  }
+
+  .box i {
+    font-size: 32px;
+  }
+
+  .box h2 {
+    font-size: 24px;
+  }
+
+  .box p {
+    font-size: 16px;
+  }
+
+  .button-cs {
+    font-size: 16px;
+  }
 }

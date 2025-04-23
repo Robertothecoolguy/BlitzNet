@@ -1,19 +1,34 @@
 .hero {
   display: flex;
-  justify-content: center;
-  height: 75vh;
+  justify-content: space-between;
+  align-items: center;
+  height: 350px;
 }
 
-.wifi-symbol {
-  margin-left: 150px;
+body::before {
+  content: "";
+  position: absolute;
+  top: 148px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 372px;
+  width: 100vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(224, 227, 231, 1) 0%,
+    rgba(224, 227, 231, 0) 80%
+  );
+  filter: blur(110.6px);
+  z-index: -1;
 }
+
 .hero-flex-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 80%;
-  position: absolute;
-  top: 146px;
+  margin-inline: auto;
   align-items: center;
+  margin-top: 75px;
 }
 
 .question-blur {
@@ -22,16 +37,19 @@
 
 .hero-text {
   margin-left: 50px;
+  min-width: 0;
 }
 
 .hero-h2 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
+  white-space: nowrap;
 }
 
 .hero-p {
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 1.5;
 }
 
 .hero-button-container {
@@ -39,11 +57,13 @@
   justify-content: flex-start;
   margin-top: 25px;
   gap: 20px;
+  min-width: 0px;
+  min-height: 0px;
 }
 
 .hero-button {
-  width: 8em;
-  height: 2.8em;
+  width: 8.5em;
+  height: 3.3em;
   font-size: 20px;
   place-content: center;
   font-weight: 600;
@@ -63,35 +83,29 @@
 }
 
 .sub-hero {
+  position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 250px;
+
   width: 100%;
 }
 
-.satellite-box {
-  display: flex;
-  justify-content: center;
-  height: 15vh;
-  margin-inline: auto;
-  width: 80%;
-}
-
 .satellite {
-  height: 175px;
-  cursor: pointer;
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  height: 160px;
   transition: 1s ease-in-out;
-}
-
-.satellite:hover {
-  transform: scale(1.05);
 }
 
 .learn-rec {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: var(--width-response);
+  width: 80%;
   height: 122px;
   background: linear-gradient(
     90deg,
@@ -111,6 +125,7 @@
 .learn-h3 {
   font-size: 28px;
   font-weight: 600;
+  letter-spacing: 0.05ch;
 }
 
 .learn-p {
@@ -130,7 +145,7 @@
 }
 
 .product-section {
-  margin-top: 100px;
+  margin-top: 150px;
 
   display: flex;
   flex-direction: column;
@@ -199,7 +214,8 @@
 }
 
 .product-img {
-  width: 100%;
+  width: auto;
+  object-fit: contain;
 
   height: 250px;
 }
@@ -266,9 +282,9 @@ li {
 
 #bundle-button {
   margin-top: 15px;
-  width: 100%;
+  width: 65%;
   color: #2e2e2e;
-  height: 2em;
+  height: 2.25em;
   font-size: 20px;
   outline: none;
   background: #e0e3e7;
@@ -286,9 +302,10 @@ li {
 }
 
 .product-card-bundle {
-  width: 57%;
+  width: 80%;
   display: flex;
   flex-direction: column;
+  margin-inline: auto;
   align-items: center;
   justify-content: center;
 }
@@ -308,14 +325,15 @@ li {
 }
 
 .customer-reviews-title {
+  margin-top: 100px;
   text-align: start;
   align-self: flex-start;
   margin-left: 10%;
 }
 
 .video-container {
-  margin-top: 20px;
-  width: var(--width-response);
+  margin-top: 100px;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -323,11 +341,16 @@ li {
   row-gap: 35px;
 }
 
+iframe {
+  height: calc(34 * 9px);
+  width: calc(34 * 16px);
+}
+
 #ch {
   display: none;
 }
 
-#ch:checked ~ .see-more-videos {
+#ch:checked ~ .vc2 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -340,8 +363,9 @@ li {
   display: none;
 }
 
-.see-more-videos {
+.vc2 {
   display: none;
+  margin-top: 0px;
 }
 
 #ch2 {
@@ -366,7 +390,7 @@ li {
 }
 
 .see-more-button {
-  margin-top: 75px;
+  margin-top: 20px;
   text-align: center;
   font-size: 20px;
   width: 6em;
@@ -415,11 +439,13 @@ li {
 .frequently-asked-questions-title {
   align-self: flex-start;
   margin-left: 10%;
+
+  margin-top: 50px;
 }
 
 .question-container {
-  margin-top: 20px;
-  width: var(--width-response);
+  margin-top: 50px;
+  width: 80%;
   align-self: center;
 }
 
@@ -439,4 +465,867 @@ li {
 .list-answer {
   margin-top: 5px;
   font-size: 20px;
+}
+
+.sphere-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 50px;
+  width: 100%;
+}
+.sphere {
+  position: relative;
+  width: 300px; /* Larger sphere */
+  height: 300px;
+  transform-style: preserve-3d;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+@media screen and (max-width: 1373px) {
+  iframe {
+    height: calc(33 * 9px);
+    width: calc(33 * 16px);
+  }
+}
+
+@media screen and (max-width: 1343px) {
+  .hero-h2 {
+    font-size: 34px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
+  }
+  iframe {
+    height: calc(31.5 * 9px);
+    width: calc(31.5 * 16px);
+  }
+}
+
+@media screen and (max-width: 1294px) {
+  iframe {
+    height: calc(30 * 9px);
+    width: calc(30 * 16px);
+  }
+  .hero-h2 {
+    font-size: 33.5px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .hero-h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
+  }
+}
+
+@media screen and (max-width: 1231px) {
+  iframe {
+    height: calc(28 * 9px);
+    width: calc(28 * 16px);
+  }
+
+  .product-card {
+    width: 40%;
+  }
+
+  #bundle-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  iframe {
+    height: calc(30 * 9px);
+    width: calc(30 * 16px);
+  }
+  .hero-flex-container {
+    width: 90%;
+  }
+
+  .frequently-asked-questions-title {
+    align-self: flex-start;
+    margin-left: 5%;
+  }
+
+  .question-container {
+    width: 90%;
+    align-self: center;
+  }
+
+  .customer-reviews-title {
+    margin-inline: 5%;
+    margin-bottom: 20px;
+  }
+
+  .learn-rec {
+    width: 80%;
+  }
+
+  .hero {
+    width: 100%;
+  }
+
+  .shop {
+    width: 90%;
+  }
+
+  .video-container {
+    width: 90%;
+  }
+
+  .vc2 {
+    margin-top: 0px;
+  }
+
+  .hero-h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
+  }
+}
+
+@media screen and (max-width: 1102px) {
+  .hero-flex-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .sphere-box {
+    margin-block: 100px;
+  }
+
+  iframe {
+    height: calc(28.5 * 9px);
+    width: calc(28.5 * 16px);
+  }
+
+  .video-container {
+    justify-content: space-between;
+  }
+
+  .satellite {
+    top: -35%;
+    height: 120px;
+  }
+
+  .hero {
+    height: 500px;
+    margin-top: 50px;
+  }
+
+  .hero-h2 {
+    font-size: 36px;
+    margin-inline: auto;
+  }
+
+  .hero-p {
+    width: 50ch;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero-text {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .hero-button-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-button {
+    width: 7rem;
+    height: 2.5em;
+  }
+
+  .learn-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .learn-h3 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.05ch;
+  }
+
+  .learn-p {
+    font-size: 16px;
+  }
+
+  .learn-more {
+    margin-right: 36px;
+    width: 8em;
+    height: 2.7em;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(223, 197, 197, 0.37);
+    border: none;
+    outline: none;
+    place-content: center;
+  }
+
+  .learn-rec {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 1033px) {
+  iframe {
+    height: calc(28 * 9px);
+    width: calc(28 * 16px);
+  }
+}
+
+/* For screens 1024px and below */
+@media screen and (max-width: 1024px) {
+  /* Hero Section */
+  .hero {
+    height: 500px;
+    margin-top: 50px;
+  }
+
+  .frequently-asked-questions-title {
+    align-self: flex-start;
+    margin-left: 2.5%;
+  }
+
+  .question-container {
+    width: 95%;
+    align-self: center;
+  }
+
+  .hero-flex-container {
+    width: 95%;
+    margin-top: 20px;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero-h2 {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  .hero-p {
+    font-size: 20px;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .hero-button-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-button {
+    width: 8em;
+    height: 2.8em;
+    font-size: 18px;
+  }
+
+  .learn-rec {
+    width: 95%;
+  }
+
+  /* Product Section */
+  .shop {
+    width: 95%;
+    margin-top: 75px;
+  }
+
+  .product-card {
+    width: 45%;
+  }
+
+  .product-img {
+    height: 200px;
+  }
+
+  /* Customer Reviews */
+  .customer-reviews-title {
+    margin-left: 2.5%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .video-container {
+    width: 95%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 60px;
+  }
+
+  iframe {
+    height: calc(28 * 9px);
+    width: calc(28 * 16px);
+  }
+
+  /* FAQs */
+  .question-container {
+    width: 95%;
+  }
+
+  .frequently-asked-questions-title,
+  .customer-reviews-title,
+  .product-title {
+    font-size: 28px;
+  }
+
+  .question {
+    font-size: 26px;
+  }
+
+  .answer,
+  .list-answer {
+    font-size: 18px;
+  }
+
+  .vc2 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  iframe {
+    height: calc(27 * 9px);
+    width: calc(27 * 16px);
+  }
+}
+
+@media screen and (max-width: 928px) {
+  iframe {
+    height: calc(26 * 9px);
+    width: calc(26 * 16px);
+  }
+}
+
+@media screen and (max-width: 899px) {
+  iframe {
+    height: calc(25 * 9px);
+    width: calc(25 * 16px);
+  }
+}
+
+/* For screens 876px and below */
+@media screen and (max-width: 876px) {
+  /* Hero Section */
+  .hero {
+    height: 550px;
+  }
+
+  .hero-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .hero-h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-p {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  /* Sub-Hero Section */
+  .satellite {
+    height: 120px;
+  }
+
+  .learn-rec {
+    padding-inline: 0px;
+  }
+
+  .learn-more {
+    font-size: 16px;
+    width: 7.5em;
+    height: 2.2em;
+    margin-right: 20px;
+  }
+
+  .learn-h3 {
+    font-size: 20px;
+  }
+
+  .learn-p {
+    font-size: 14px;
+  }
+
+  /* Product Section */
+  .shop {
+    width: 100%;
+    row-gap: 75px;
+    justify-content: center;
+  }
+
+  .product-card {
+    width: 80%;
+  }
+
+  .product-img {
+    height: 180px;
+  }
+
+  .product-card-bundle {
+    width: 90%;
+  }
+
+  .img-box {
+    column-gap: 50px;
+  }
+
+  .img-box .product-img {
+    height: 160px;
+  }
+
+  iframe {
+    height: calc(24 * 9px);
+    width: calc(24 * 16px);
+  }
+
+  /* FAQs */
+  .question {
+    font-size: 26px;
+  }
+
+  .answer,
+  .list-answer {
+    font-size: 18px;
+  }
+
+  .frequently-asked-questions-title,
+  .customer-reviews-title,
+  .product-title {
+    font-size: 26px;
+  }
+
+  .question {
+    font-size: 24px;
+  }
+
+  .answer,
+  .list-answer {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 823px) {
+  iframe {
+    height: calc(23 * 9px);
+    width: calc(23 * 16px);
+  }
+}
+
+@media screen and (max-width: 790px) {
+  iframe {
+    height: calc(22 * 9px);
+    width: calc(22 * 16px);
+  }
+}
+
+@media screen and (max-width: 754px) {
+  iframe {
+    height: calc(21 * 9px);
+    width: calc(21 * 16px);
+  }
+}
+
+@media screen and (max-width: 732px) {
+  iframe {
+    height: calc(20 * 9px);
+    width: calc(20 * 16px);
+  }
+}
+
+@media screen and (max-width: 684px) {
+  .video-container {
+    flex-direction: column;
+  }
+
+  iframe {
+    height: calc(28 * 9px);
+    width: calc(28 * 16px);
+  }
+
+  .learn-h3 {
+    font-size: 18px;
+  }
+
+  .learn-p {
+    font-size: 14px;
+  }
+}
+
+/* For screens 555px and below */
+@media screen and (max-width: 555px) {
+  .sphere-box {
+    margin-top: 50px;
+    margin-bottom: 75px;
+  }
+  .hero {
+    height: 600px;
+    margin-top: 30px;
+  }
+
+  .hero-h2 {
+    font-size: 24px;
+  }
+
+  .hero-p {
+    font-size: 16px;
+    width: 95%;
+  }
+
+  .hero-button-container {
+    gap: 10px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+  }
+
+  /* Sub-Hero Section */
+  .sub-hero {
+    margin-top: 200px;
+  }
+
+  .learn-rec {
+    position: relative;
+    flex-direction: column; /* Stack content */
+    text-align: start;
+    padding: 15px;
+    padding-bottom: 100px;
+  }
+
+  .satellite {
+    position: absolute;
+    height: 90px;
+    top: -30%;
+  }
+
+  .learn-text {
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+
+  .learn-rec a {
+    width: 100%;
+  }
+
+  .learn-more {
+    margin-left: auto;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  /* Product Section */
+  .product-section {
+    margin-top: 75px;
+  }
+
+  .shop {
+    flex-direction: column; /* Stack cards */
+    margin-top: 50px;
+    row-gap: 50px;
+  }
+
+  .product-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .product-img {
+    height: 150px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-price {
+    font-size: 24px;
+  }
+
+  .pc2 .card-price {
+    font-size: 24px;
+    margin-block: 0px;
+    margin-bottom: 20px;
+  }
+
+  .card-sub-title {
+    font-size: 16px;
+  }
+
+  .product-benefits {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .add-to-cart {
+    font-size: 16px;
+    height: 2.5em;
+  }
+
+  .product-card-bundle {
+    width: 95%;
+  }
+
+  .img-box {
+    column-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .img-box .product-img {
+    height: 120px;
+  }
+
+  .bundle-benefits-box {
+    flex-direction: column;
+    column-gap: 0;
+  }
+
+  #bundle-button {
+    width: 100%;
+    font-size: 16px;
+    height: 2.5em;
+  }
+
+  iframe {
+    height: calc(24 * 9px);
+    width: calc(24 * 16px);
+  }
+
+  .see-more-button {
+    font-size: 16px;
+  }
+
+  /* FAQs */
+  .frequently-asked-questions {
+    margin-top: 50px;
+  }
+
+  .frequently-asked-questions-title,
+  .customer-reviews-title,
+  .product-title {
+    font-size: 24px;
+  }
+
+  .question {
+    font-size: 22px;
+  }
+
+  .answer,
+  .list-answer {
+    font-size: 14px;
+  }
+
+  .see-more-button-2 {
+    font-size: 16px;
+  }
+
+  .video-container {
+    margin-top: 40px;
+  }
+
+  .vc2 {
+    margin-top: 0px;
+  }
+
+  .question {
+    font-size: 20px;
+  }
+
+  .answer,
+  .list-answer {
+    font-size: 14px;
+  }
+}
+
+/* For screens 425px and below */
+@media screen and (max-width: 425px) {
+  /* Hero Section */
+  .hero {
+    height: 650px;
+  }
+
+  .hero-flex-container {
+    padding: 0 10px;
+  }
+
+  .hero-h2 {
+    font-size: 22px;
+  }
+
+  .hero-p {
+    font-size: 14px;
+  }
+
+  .hero-button {
+    max-width: 180px;
+    font-size: 14px;
+  }
+
+  .sphere-box {
+    margin-top: 20px;
+    margin-bottom: 75px;
+  }
+
+  .hero-text {
+    margin-bottom: 40px;
+  }
+
+  .sphere {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* Sub-Hero Section */
+  .satellite {
+    height: 80px;
+  }
+
+  .sub-hero {
+    margin-top: 100px;
+  }
+
+  .product-img {
+    height: 140px;
+  }
+
+  .img-box .product-img {
+    height: 110px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-price {
+    font-size: 22px;
+  }
+
+  .card-sub-title {
+    font-size: 14px;
+  }
+
+  .product-benefits {
+    font-size: 12px;
+  }
+
+  .add-to-cart {
+    font-size: 14px;
+  }
+
+  #bundle-button {
+    font-size: 14px;
+  }
+
+  iframe {
+    max-width: 350px;
+  }
+
+  .see-more-button {
+    max-width: 140px;
+  }
+
+  /* FAQs */
+
+  .customer-reviews-title {
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+
+  .frequently-asked-questions-title,
+  .product-title {
+    font-size: 21px;
+  }
+
+  .question {
+    font-size: 17px;
+  }
+
+  .answer,
+  .list-answer {
+    font-size: 13px;
+  }
+
+  .see-more-button-2 {
+    max-width: 140px;
+  }
+
+  .video-container {
+    margin-top: 30px;
+  }
+
+  .question-container {
+    margin-top: 40px;
+  }
+
+  .vc2 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .learn-rec {
+    padding-bottom: 100px;
+  }
+
+  .learn-h3 {
+    font-size: 16px;
+  }
+
+  .learn-p {
+    font-size: 12px;
+  }
+
+  .satellite {
+    top: -25%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  iframe {
+    height: calc(17 * 9px);
+    width: calc(17 * 16px);
+  }
+}
+
+@media screen and (max-width: 353px) {
+  .learn-h3 {
+    font-size: 14px;
+  }
+
+  .learn-rec {
+    padding-bottom: 100px;
+  }
 }

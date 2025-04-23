@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.getItem("cartItems")
         );
         updateCartCount();
-        window.dispatchEvent(new Event("cartUpdated")); // Add this to notify my-orders.js
+        window.dispatchEvent(new Event("cartUpdated"));
       }
 
       updateCartCount();
@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Listen for cart updates from other scripts
       window.addEventListener("cartUpdated", () => {
         cartItems = new Set(
           JSON.parse(localStorage.getItem("cartItems")) || []

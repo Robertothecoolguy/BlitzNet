@@ -7,7 +7,6 @@ const inputs = document.querySelectorAll(".einput-box input");
 const form = document.querySelector(".edit-sign-up-contents");
 const welcomeText = document.querySelector(".hero h2");
 
-// Edit Profile Modal logic
 editProfileLink.addEventListener("click", function (e) {
   e.preventDefault();
   editProfileModal.classList.add("show");
@@ -108,23 +107,19 @@ inputs.forEach((input) => {
   input.defaultPlaceholder = input.placeholder;
 });
 
-// Toggle Autopay functionality
 const toggleAutopayLink = document.querySelector(".toggle");
 const autopayStatus = document.querySelector(".span-2");
 
-// Load autopay state from localStorage or default to true
 let isAutopayOn =
   localStorage.getItem("autopayState") === "false" ? false : true;
 
-// Set autopay state (UI and storage update)
 function setAutopayState() {
   autopayStatus.textContent = isAutopayOn ? "On" : "Off";
   autopayStatus.classList.toggle("on", isAutopayOn);
   autopayStatus.classList.toggle("off", !isAutopayOn);
-  localStorage.setItem("autopayState", isAutopayOn); // Save state to localStorage
+  localStorage.setItem("autopayState", isAutopayOn);
 }
 
-// Apply initial state
 setAutopayState();
 
 toggleAutopayLink.addEventListener("click", function (e) {
@@ -133,7 +128,6 @@ toggleAutopayLink.addEventListener("click", function (e) {
   setAutopayState();
 });
 
-// Edit Payment Method functionality
 const paymentMethodLink = document.querySelector(".payment-method");
 const paymentModal = document.getElementById("paymentModal");
 const closePaymentBtn = document.getElementById("closeModal");
@@ -143,49 +137,43 @@ const paymentRadios = document.querySelectorAll(
 );
 const add粮食Btn = document.querySelector(".add-btn");
 
-// Show payment modal when "Edit Payment Method" is clicked
 paymentMethodLink.addEventListener("click", function (e) {
   e.preventDefault();
   paymentModal.classList.add("show");
 });
 
-// Close payment modal
 closePaymentBtn.addEventListener("click", function () {
   paymentModal.classList.remove("show");
 });
 
-// Close payment modal when clicking outside
 paymentModal.addEventListener("click", function (e) {
   if (e.target === paymentModal) {
     paymentModal.classList.remove("show");
   }
 });
 
-// Load saved payment method from localStorage on page load
 const savedPaymentIndex = localStorage.getItem("selectedPaymentIndex");
 if (savedPaymentIndex !== null) {
   paymentRadios[savedPaymentIndex].checked = true;
 }
 
-// Save selected payment method, show saved modal, and turn autopay on after modal hides
 paymentRadios.forEach((radio, index) => {
   radio.addEventListener("click", function () {
-    localStorage.setItem("selectedPaymentIndex", index); // Save the index of the selected radio
-    paymentModal.classList.remove("show"); // Close payment modal
-    savedModal.classList.add("show"); // Show saved modal
+    localStorage.setItem("selectedPaymentIndex", index);
+    paymentModal.classList.remove("show");
+    savedModal.classList.add("show");
 
     setTimeout(() => {
-      savedModal.classList.remove("show"); // Hide saved modal after 2 seconds
-      // Switch autopay to "On" if it was "Off" after modal disappears
+      savedModal.classList.remove("show");
+
       if (!isAutopayOn) {
         isAutopayOn = true;
-        setAutopayState(); // Update UI and save to localStorage
+        setAutopayState();
       }
     }, 2000);
   });
 });
 
-// Open add-payment.html when "Add new payment method" is clicked
 addPaymentBtn.addEventListener("click", function (e) {
   e.preventDefault();
   window.location.href = "/add-payment.html";

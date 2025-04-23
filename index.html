@@ -24,9 +24,85 @@
     <div id="navbar-placeholder"></div>
 
     <section class="hero">
-      <img class="ellipse" src="Ellipse 7.svg" alt="" />
       <div class="hero-flex-container">
-        <img class="wifi-symbol" src="/pngegg (12) 1.svg" alt="" />
+        <div class="sphere-box">
+          <div class="sphere" id="sphere"></div>
+        </div>
+
+        <script>
+          const sphere = document.getElementById("sphere");
+
+          // Function to place dots in a clustered shape
+          function addContinentDots(
+            centerTheta,
+            centerPhi,
+            spread,
+            numDots,
+            radius
+          ) {
+            for (let i = 0; i < numDots; i++) {
+              const dot = document.createElement("div");
+              dot.className = "dot";
+
+              const theta = centerTheta + (Math.random() - 0.5) * spread;
+              const phi = centerPhi + (Math.random() - 0.5) * spread * 0.5;
+
+              const x = radius * Math.sin(phi) * Math.cos(theta);
+              const y = radius * Math.sin(phi) * Math.sin(theta);
+              const z = radius * Math.cos(phi);
+
+              dot.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+              dot.style.left = "50%";
+              dot.style.top = "50%";
+              sphere.appendChild(dot);
+            }
+          }
+
+          // Create continents
+          function createEarthDots(radius) {
+            // Clear existing dots
+            sphere.innerHTML = "";
+
+            // Add new dots with updated radius
+            addContinentDots(-1.745, 0.698, 0.8, 40, radius); // North America
+            addContinentDots(-1.047, 2.879, 0.6, 30, radius); // South America
+            addContinentDots(0.349, 1.571, 0.9, 50, radius); // Africa
+            addContinentDots(1.047, 0.524, 1.2, 60, radius); // Europe/Asia
+            addContinentDots(2.356, 2.007, 0.4, 20, radius); // Australia
+          }
+
+          // Random rotation
+          function rotateSphere() {
+            const xAngle = Math.random() * 360;
+            const yAngle = Math.random() * 360;
+            const zAngle = Math.random() * 360;
+            sphere.style.transform = `rotateX(
+              ${xAngle}deg) rotateY(${yAngle}deg) rotateZ(${zAngle}deg
+            )`;
+            sphere.style.transition = "transform 3s ease";
+            setTimeout(rotateSphere, 3000);
+          }
+
+          // Initialize sphere with current size
+          function initializeSphere() {
+            const radius = sphere.offsetWidth / 2; // Dynamically get radius
+            createEarthDots(radius);
+          }
+
+          // Call initialize on load
+          initializeSphere();
+          rotateSphere();
+
+          // Update sphere on window resize
+          let resizeTimeout;
+          window.addEventListener("resize", () => {
+            // Debounce to avoid excessive updates
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+              initializeSphere(); // Recreate dots with new radius
+            }, 100); // 100ms delay to reduce performance impact
+          });
+        </script>
         <div class="hero-text">
           <h2 class="hero-h2">High-Speed Data and Internet</h2>
           <p class="hero-p">
@@ -38,23 +114,22 @@
             <a href="index.html#product-section"
               ><button class="hero-button black">Shop Now</button></a
             >
-            <a href="index.html#faq-section"
-              ><button class="hero-button grey">How it Works</button></a
+            <a href="/sign-up.html"
+              ><button class="hero-button grey">Sign Up</button></a
             >
           </div>
         </div>
       </div>
     </section>
-    <div class="satellite-box">
-      <img class="satellite" src="/pngegg 1.svg" alt="" />
-    </div>
+
     <section class="sub-hero">
+      <img class="satellite" src="/pngegg 1.svg" alt="" />
       <div class="learn-rec">
         <div class="learn-text">
           <h3 class="learn-h3">Speeds up to 300 mbps; no dead zones.</h3>
           <p class="learn-p">The power of BlitzNet service from outer space.</p>
         </div>
-        <a href="https://youtube.com"
+        <a href="https://www.youtube.com/watch?v=t82-QBiBBoQ" target="_blank"
           ><button class="learn-more">Learn More</button></a
         >
       </div>
@@ -84,8 +159,8 @@
           <button class="add-to-cart" data-product-id="1">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="/image 1.svg" alt="" class="product-img" />
+        <div class="product-card pc2">
+          <img src="/image 1.png" alt="" class="product-img" />
           <h3 class="card-title">Phone Service</h3>
           <div class="pricing-part">
             <h1 class="card-price">
@@ -104,46 +179,44 @@
           <button class="add-to-cart" data-product-id="2">Add to Cart</button>
         </div>
 
-        <div class="card-3" id="card-3">
-          <div class="product-card-bundle">
-            <div class="img-box">
-              <img src="/Layer 1.svg" alt="" class="product-img" />
-              <img src="/image 1.svg" alt="" class="product-img" />
-            </div>
-            <h3 class="card-title">Modem + Phone Service</h3>
-            <h1 class="card-price">$90.00</h1>
-            <h3 class="card-sub-title">
-              $50/month <span class="span-3">subscription</span>
-            </h3>
-            <div class="bundle-benefits-box">
-              <div class="bundle-benefits-modem">
-                <h3 class="card-title">Modem</h3>
-                <div class="bundle-list-box">
-                  <li>$100.00 one time payment for modem</li>
-                  <li>100-300mbps (depends on your area)</li>
-                  <li>Tri-Band Wi-Fi</li>
-                  <li>Wi-Fi 6E</li>
-                  <li>Self Setup</li>
-                  <li>MU-MIMO Technology</li>
-                  <li>Zero Latency</li>
-                  <li>350 feet 6E signal range</li>
-                </div>
-              </div>
-              <div class="bundle-benefits-phone-service">
-                <h3 class="card-title">Phone Service</h3>
-                <div class="bundle-list-box">
-                  <li>200-300mbps (depends on your area)</li>
-                  <li>Unlimited 5G Data throughout the world</li>
-                  <li>Affordable family plans</li>
-                  <li>No hidden fees. Cancel anytime</li>
-                  <li>4K Video Streaming</li>
-                  <li>Zero Latency</li>
-                  <li>Global Roaming</li>
-                </div>
-              </div>
-            </div>
-            <button id="bundle-button">Bundle Now</button>
+        <div class="product-card-bundle">
+          <div class="img-box">
+            <img src="/Layer 1.svg" alt="" class="product-img" />
+            <img src="/image 1.png" alt="" class="product-img" />
           </div>
+          <h3 class="card-title">Modem + Phone Service</h3>
+          <h1 class="card-price">$90.00</h1>
+          <h3 class="card-sub-title">
+            $50/month <span class="span-3">subscription</span>
+          </h3>
+          <div class="bundle-benefits-box">
+            <div class="bundle-benefits-modem">
+              <h3 class="card-title">Modem</h3>
+              <div class="bundle-list-box">
+                <li>$100.00 one time payment for modem</li>
+                <li>100-300mbps (depends on your area)</li>
+                <li>Tri-Band Wi-Fi</li>
+                <li>Wi-Fi 6E</li>
+                <li>Self Setup</li>
+                <li>MU-MIMO Technology</li>
+                <li>Zero Latency</li>
+                <li>350 feet 6E signal range</li>
+              </div>
+            </div>
+            <div class="bundle-benefits-phone-service">
+              <h3 class="card-title">Phone Service</h3>
+              <div class="bundle-list-box">
+                <li>200-300mbps (depends on your area)</li>
+                <li>Unlimited 5G Data throughout the world</li>
+                <li>Affordable family plans</li>
+                <li>No hidden fees. Cancel anytime</li>
+                <li>4K Video Streaming</li>
+                <li>Zero Latency</li>
+                <li>Global Roaming</li>
+              </div>
+            </div>
+          </div>
+          <button id="bundle-button">Bundle Now</button>
         </div>
       </div>
     </section>
@@ -196,7 +269,7 @@
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen></iframe>
 
-        <div class="see-more-videos">
+        <div class="video-container vc2">
           <iframe
             width="560"
             height="315"
@@ -314,5 +387,6 @@
     <script src="footer.js"></script>
     <script src="footer-modal.js"></script>
     <script src="sign-in.js"></script>
+    <script src="global.js"></script>
   </body>
 </html>

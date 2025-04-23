@@ -1,4 +1,3 @@
-// Product HTML templates
 const productTemplates = {
   1: `
     <div class="order-product-container" data-product-id="1">
@@ -24,7 +23,7 @@ const productTemplates = {
   2: `
     <div class="order-product-container-2" data-product-id="2">
       <div class="img-product-container">
-        <img class="order-product-img" src="/image 1.svg" alt="Global Cellular">
+        <img class="order-product-img" src="/image 1.png" alt="Global Cellular">
       </div>
       <div class="order-product-text">
         <h3 class="order-product-name">Global Cellular Data</h3>
@@ -44,7 +43,6 @@ const productTemplates = {
   `,
 };
 
-// Product pricing data
 const productPricing = {
   1: { oneTime: 90, monthly: 30 },
   2: { oneTime: 0, monthly: 30, additionalLine: 20 },
@@ -144,7 +142,6 @@ function renderCartItems() {
 
   updatePriceDetails(cartItems);
 
-  // Event listeners for quantity increase
   document.querySelectorAll(".qty-increase").forEach((button) => {
     button.addEventListener("click", () => {
       const container = button.closest(
@@ -165,7 +162,6 @@ function renderCartItems() {
     });
   });
 
-  // Event listeners for quantity decrease
   document.querySelectorAll(".qty-decrease").forEach((button) => {
     button.addEventListener("click", () => {
       const container = button.closest(
@@ -188,7 +184,6 @@ function renderCartItems() {
     });
   });
 
-  // Event listeners for delete
   document.querySelectorAll(".order-product-delete").forEach((button) => {
     button.addEventListener("click", () => {
       const container = button.closest(

@@ -1,9 +1,15 @@
-/* add-payment.css */
+.container {
+  display: flex;
+  height: 800px;
+  align-items: center;
+  justify-content: center;
+  padding-block: 75px;
+}
+
 .wrapper {
-  margin-block: 75px;
   width: 45%;
+  max-width: 576px;
   padding: 25px;
-  margin-inline: auto;
   background: linear-gradient(
     to right,
     #f8f9fb23,
@@ -14,7 +20,7 @@
   );
   box-shadow: 0 0 20px #f8f9fb;
   border-radius: 20px;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 .wrapper.active {
@@ -114,7 +120,7 @@
 }
 
 .wrapper .input-box label.radio-label-active {
-  background: #c9b7d6 !important; /* Purple highlight */
+  background: #c9b7d6 !important;
   display: inline-block;
 }
 
@@ -150,7 +156,6 @@ span,
   box-shadow: 0 0 2px 1px #f8f9fb;
 }
 
-/* Styles for Google Pay and Apple Pay buttons */
 .google-pay-button {
   display: flex;
   margin: 20px auto;
@@ -210,4 +215,37 @@ span,
 .google-pay-button img.apple {
   filter: invert(100%);
   height: 23px;
+}
+
+@media screen and (max-width: 1075px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  .container {
+    padding-block: 40px;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .wrapper {
+    width: 85%;
+  }
+
+  .container {
+    padding-block: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    position: absolute;
+    top: 0;
+    transform: scale(0.8);
+    width: 100%;
+  }
+
+  .container {
+    height: 700px;
+  }
 }

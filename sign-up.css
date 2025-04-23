@@ -191,20 +191,20 @@ b {
 }
 
 .confirm-modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed position to overlay without affecting layout */
+  display: none;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  z-index: 2000; /* High z-index to appear above everything */
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
 
 .confirm-modal.show {
-  display: flex; /* Show when active */
+  display: flex;
 }
 
 .cbox {
@@ -213,10 +213,10 @@ b {
   margin-bottom: 100px;
   justify-content: center;
   align-items: center;
-  transform: scale(0); /* Start at 0% size */
+  transform: scale(0);
   transform-origin: center;
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -230,7 +230,6 @@ b {
   color: white;
 }
 
-/* Animation for growing only */
 @keyframes grow {
   0% {
     transform: scale(0);
@@ -241,7 +240,7 @@ b {
 }
 
 .confirm-modal.show .cbox {
-  animation: grow 0.3s ease forwards; /* Grow in 1s and stay */
+  animation: grow 0.3s ease forwards;
   background: purple;
   padding: 25px;
   height: 200px;
@@ -255,7 +254,7 @@ b {
 }
 
 .code-input {
-  width: 100%;
+  width: 40px;
   background: linear-gradient(
     to right,
     #f8f9fb23,
@@ -265,7 +264,7 @@ b {
     #f8f9fb23
   );
   box-shadow: 0 0 5px #f8f9fb8e;
-  min-height: 50px;
+  height: 50px;
   border-radius: 5px;
   text-align: center;
   font-size: 20px;
@@ -278,17 +277,247 @@ b {
   color: #c9b7d6;
 }
 
-/* Ensure wrapper confirm is hidden initially */
 .wrapper.confirm {
   display: none;
 }
 
-/* Active state for wrapper confirm */
 .wrapper.confirm.active {
   display: flex;
 }
 
-/* Initial wrapper hidden state when confirm is active */
 .wrapper.hidden {
   display: none;
+}
+
+@media screen and (max-width: 1388px) {
+  .wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1202px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .logo-title h2,
+  .logo-title-2 h2 {
+    font-size: 26px;
+  }
+
+  .logo-title-2 p {
+    font-size: 16px;
+  }
+
+  .resend,
+  .go-back {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 842px) {
+  .wrapper {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+  }
+  .logo-title-2 {
+    align-self: flex-start;
+  }
+
+  .confirm {
+    position: relative;
+  }
+
+  .confirm .sign-up-contents {
+    margin-top: 30px;
+  }
+
+  .auth-pin-wrap {
+    margin-bottom: 50px;
+  }
+  .sign-up-contents {
+    width: 100%;
+  }
+  .logo-title {
+    align-items: center;
+  }
+
+  .next-button {
+    margin-top: 20px;
+  }
+
+  .go-back {
+    position: absolute;
+    bottom: 42.5px;
+  }
+}
+
+@media screen and (max-width: 842px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  .logo-title-2 p {
+    max-width: 40ch;
+  }
+
+  .confirm {
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .input-group {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .auth-pin-wrap {
+    flex-direction: row;
+  }
+
+  .confirm-modal.show .cbox {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .wrapper {
+    width: 85%;
+  }
+
+  .confirm-modal.show .cbox {
+    width: 375px;
+  }
+
+  .confirm-modal.show .cbox h1 {
+    font-size: 30px;
+  }
+
+  .next-button {
+    margin-top: 30px;
+  }
+
+  .code-input {
+    width: 30px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 422px) {
+  .next-button-2 {
+    width: 100%;
+    margin-bottom: 12.5px;
+  }
+
+  .go-back {
+    bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .logo-title h2,
+  .logo-title-2 h2 {
+    font-size: 22px;
+  }
+  .logo-title p {
+    font-size: 16px;
+  }
+
+  .wrapper h4 {
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    font-size: 13px;
+  }
+
+  .input-box .bi {
+    font-size: 16px;
+  }
+
+  .next-button {
+    margin-top: 35px;
+    width: 100%;
+    height: 2.25rem;
+    font-size: 14px;
+  }
+
+  .go-back {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+  }
+
+  .confirm-modal.show .cbox {
+    width: 355px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .auth-pin-wrap {
+    column-gap: 15px;
+  }
+
+  .confirm-modal.show .cbox {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 356px) {
+  .wrapper {
+    padding-inline: 15px;
+  }
+  .logo-title h2 {
+    font-size: 21px;
+  }
+  .confirm-modal.show .cbox {
+    width: 325px;
+  }
+
+  .confirm-modal.show .cbox h1 {
+    font-size: 26px;
+  }
+  .confirm-modal.show .cbox p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .auth-pin-wrap {
+    column-gap: 12.5px;
+  }
+  .confirm-modal.show .cbox {
+    width: 315px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .logo-title h2 {
+    font-size: 20px;
+  }
+
+  .logo-title p,
+  .logo-title-2 p {
+    font-size: 15px;
+  }
+
+  .auth-pin-wrap {
+    column-gap: 11.5px;
+  }
+
+  .confirm-modal.show .cbox {
+    width: 300px;
+  }
 }

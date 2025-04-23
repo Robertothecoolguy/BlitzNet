@@ -77,17 +77,17 @@
 .explain-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 800px;
-  justify-content: center;
-  position: relative; /* Ensure circles stay above progress bar */
-  z-index: 2; /* Circles above progress bar */
+  width: 15%;
+  position: relative;
+  z-index: 2;
 }
 
 .explained {
   margin-top: 37.5px;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .bi {
@@ -97,10 +97,9 @@
 .circle-explain-container {
   position: relative;
   display: flex;
+  justify-content: space-between;
   margin-top: 100px;
-  width: 100%;
-  justify-content: center;
-  column-gap: 100px;
+  width: calc(100% + 60px);
 }
 
 .progress-bar {
@@ -111,56 +110,40 @@
   border-radius: 20px;
   height: 10px;
   background: gray;
-  z-index: 1; /* Progress bar above :before but below circles */
-  left: 7.5%; /* Center the progress bar */
+  z-index: 1;
+  left: 7.5%;
 }
 
 .invoice-1-bar {
-  background: linear-gradient(
-    to right,
-    #00f 0%,
-    /* Start of two-toned blue */ #00b7ff 33%,
-    /* End of two-toned blue at circle 2 */ gray 33% /* Gray for the rest */
-  );
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.7), 0 0 25px rgba(0, 183, 255, 0.5); /* Glow for blue segment */
-  animation: glowPulseBlue 1.5s infinite ease-in-out; /* Blue animation */
+  background: linear-gradient(to right, #00f 0%, #00b7ff 33%, gray 33%);
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.7), 0 0 25px rgba(0, 183, 255, 0.5);
+  animation: glowPulseBlue 1.5s infinite ease-in-out;
 }
 
 .invoice-2-bar {
   background: linear-gradient(
     to right,
     gray 33%,
-    /* Gray from start to circle 2 */ #ff6200 33%,
-    /* Start of two-toned orange at circle 2 */ #ff9f00 66%,
-    /* End of two-toned orange at circle 4 */ #ff9f00 66%
-      /* Gray after circle 4 */
+    #ff6200 33%,
+    #ff9f00 66%,
+    #ff9f00 66%
   );
-  box-shadow: 0 0 15px rgba(255, 98, 0, 0.7), 0 0 25px rgba(255, 159, 0, 0.5); /* Glow for orange segment */
-  animation: glowPulseOrange 1.5s infinite ease-in-out; /* Blue animation */
+  box-shadow: 0 0 15px rgba(255, 98, 0, 0.7), 0 0 25px rgba(255, 159, 0, 0.5);
+  animation: glowPulseOrange 1.5s infinite ease-in-out;
 }
 
 .invoice-3-bar {
-  background: linear-gradient(
-    to right,
-    #f00,
-    #ff4040
-  ); /* Two-toned red entire bar */
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 25px rgba(255, 64, 64, 0.5); /* Glow for red segment */
-  animation: glowPulseRed 1.5s infinite ease-in-out; /* Blue animation */
+  background: linear-gradient(to right, #f00, #ff4040);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 25px rgba(255, 64, 64, 0.5);
+  animation: glowPulseRed 1.5s infinite ease-in-out;
 }
 
 .invoice-4-bar {
-  background: linear-gradient(
-    to right,
-    #0f0 0%,
-    /* Start of two-toned green */ #00ff80 66%,
-    /* End of two-toned green at circle 3 */ gray 66% /* Gray after circle 3 */
-  );
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 25px rgba(0, 255, 128, 0.5); /* Glow for green segment */
-  animation: glowPulseGreen 1.5s infinite ease-in-out; /* Blue animation */
+  background: linear-gradient(to right, #0f0 0%, #00ff80 66%, gray 66%);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 25px rgba(0, 255, 128, 0.5);
+  animation: glowPulseGreen 1.5s infinite ease-in-out;
 }
 
-/* Color-specific glow animations */
 @keyframes glowPulseBlue {
   0% {
     box-shadow: 0 0 15px rgba(0, 0, 255, 0.6), 0 0 25px rgba(0, 183, 255, 0.4);
@@ -211,4 +194,170 @@
 
 b {
   color: white;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    width: 95%;
+  }
+
+  .invoice-box {
+    width: 95%;
+  }
+
+  .call-box {
+    width: 90.25%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .invoice-box {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    height: 600px;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px;
+  }
+  .tracking-nav {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .circle-explain-container {
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .explained {
+    margin-top: 0px;
+    height: 50px;
+    margin-left: 40px;
+    justify-content: center;
+  }
+
+  .bi {
+    align-self: flex-start;
+  }
+
+  .explained h3 {
+    align-self: flex-start;
+    text-align: start;
+  }
+
+  .explain-box {
+    width: auto;
+  }
+
+  .explain-box:first-child .explained:first-of-type {
+    justify-content: flex-start;
+    margin-top: 25px;
+  }
+
+  .progress-bar {
+    width: 10px;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .expected,
+  .location,
+  .order-number,
+  .ups {
+    line-height: 20px;
+    width: 25ch;
+    margin-bottom: 15px;
+  }
+
+  .more-details {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+  }
+
+  .invoice-1-bar {
+    background: linear-gradient(to bottom, #00f 0%, #00b7ff 33%, gray 33%);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.7), 0 0 25px rgba(0, 183, 255, 0.5);
+    animation: glowPulseBlue 1.5s infinite ease-in-out;
+  }
+
+  .invoice-2-bar {
+    background: linear-gradient(
+      to bottom,
+      gray 33%,
+      #ff6200 33%,
+      #ff9f00 66%,
+      #ff9f00 66%
+    );
+    box-shadow: 0 0 15px rgba(255, 98, 0, 0.7), 0 0 25px rgba(255, 159, 0, 0.5);
+    animation: glowPulseOrange 1.5s infinite ease-in-out;
+  }
+
+  .invoice-3-bar {
+    background: linear-gradient(to bottom, #f00, #ff4040);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 25px rgba(255, 64, 64, 0.5);
+    animation: glowPulseRed 1.5s infinite ease-in-out;
+  }
+
+  .invoice-4-bar {
+    background: linear-gradient(to bottom, #0f0 0%, #00ff80 66%, gray 66%);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 25px rgba(0, 255, 128, 0.5);
+    animation: glowPulseGreen 1.5s infinite ease-in-out;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .explained h3 {
+    font-size: 16px;
+  }
+
+  .invoice-box {
+    padding-inline: 20px;
+  }
+}
+
+@media screen and (max-width: 502px) {
+  .call-box > * {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .expected,
+  .location,
+  .order-number,
+  .ups {
+    width: 15ch;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 392px) {
+  .invoice-box {
+    padding-inline: 10px;
+  }
+  .more-details {
+    left: 10px;
+  }
+
+  .ups b {
+    font-size: 14px;
+  }
+
+  .call-box > * {
+    transform: scale(0.6);
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .circle-explain-container {
+    margin-left: 20px;
+  }
 }

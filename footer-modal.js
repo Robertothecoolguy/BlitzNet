@@ -7,21 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.text();
     })
     .then((data) => {
-      // Insert the footer HTML into the placeholder
       document.getElementById("footer-placeholder").innerHTML = data;
 
-      // Create overlay element
       const overlay = document.createElement("div");
       overlay.className = "overlay";
       document.body.appendChild(overlay);
 
-      // Function to check if terms have been accepted previously
       const hasAcceptedTerms = () =>
         localStorage.getItem("termsAccepted") === "true";
       const setTermsAccepted = () =>
         localStorage.setItem("termsAccepted", "true");
 
-      // Safety Modal functionality
       const safetyLink = document.querySelector(".safety-link");
       const safetyModal = document.getElementById("safety-modal");
       const safetyCloseBtn = safetyModal?.querySelector(".closebtn");
@@ -73,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Terms Modal functionality
       const termsLink = document.getElementById("termsLink");
       const termsModal = document.getElementById("termsModal");
       const closeTerms = termsModal?.querySelector("#closeTerms");
@@ -165,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Privacy Modal functionality
       const privacyLink = document.getElementById("privacyLink");
       const privacyModal = document.getElementById("privacyModal");
       const closePrivacy = privacyModal?.querySelector("#closePrivacy");
@@ -188,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Cookie Modal functionality
       const cookieLink = document.getElementById("cookieLink");
       const cookieModal = document.getElementById("cookieModal");
       const closeCookie = cookieModal?.querySelector("#closeCookie");
@@ -211,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Close modals when clicking overlay
       overlay.addEventListener("click", () => {
         if (safetyModal) safetyModal.style.display = "none";
         if (termsModal) termsModal.style.display = "none";

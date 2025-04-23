@@ -1,14 +1,11 @@
-// add-payment.js
 document.addEventListener("DOMContentLoaded", function () {
   const creditCardWrapper = document.querySelector(".credit-card-layout");
   const body = creditCardWrapper.parentNode;
 
-  // Create additional wrappers
   const bankWrapper = document.createElement("div");
   const googlePayWrapper = document.createElement("div");
   const applePayWrapper = document.createElement("div");
 
-  // Bank wrapper HTML
   bankWrapper.className = "wrapper bank-layout";
   bankWrapper.innerHTML = `
 
@@ -68,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   `;
 
-  // Google Pay wrapper HTML
   googlePayWrapper.className = "wrapper google-pay-layout";
   googlePayWrapper.innerHTML = `
    
@@ -90,13 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="google-pay-button button-41">
           <span class="text">
     Add with
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/1200px-Google_Pay_Logo.svg.png" alt="Google Pay" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/2560px-Google_Pay_Logo.svg.png">
           </span>
         </a>
         <button class="pay-now-button" type="submit">Add & Turn On Autopay</button>
   `;
 
-  // Apple Pay wrapper HTML
   applePayWrapper.className = "wrapper apple-pay-layout";
   applePayWrapper.innerHTML = `
 
@@ -118,31 +113,27 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="google-pay-button button-41">
           <span class="text">
     Add with
-            <img class="apple" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/768px-Apple_Pay_logo.svg.png" alt="Apple Pay" />
+            <img class="apple" src="https://banner2.cleanpng.com/20180403/dww/avhobgfm3.webp">
           </span>
         </a>
         <button class="pay-now-button" type="submit">Add & Turn On Autopay</button>
    
   `;
 
-  // Insert all wrappers
   body.insertBefore(bankWrapper, creditCardWrapper.nextSibling);
   body.insertBefore(googlePayWrapper, bankWrapper.nextSibling);
   body.insertBefore(applePayWrapper, googlePayWrapper.nextSibling);
 
-  // Load saved state
   const savedMethod = localStorage.getItem("paymentMethod") || "credit";
   const savedCreditData =
     JSON.parse(localStorage.getItem("creditCardData")) || {};
   const savedBankData = JSON.parse(localStorage.getItem("bankData")) || {};
 
-  // Function to clear form
   function clearForm(wrapper) {
     const inputs = wrapper.querySelectorAll("input:not(.radio)");
     inputs.forEach((input) => (input.value = ""));
   }
 
-  // Function to save form data
   function saveFormData(wrapper, storageKey) {
     const inputs = wrapper.querySelectorAll("input:not(.radio)");
     const data = {};
@@ -152,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem(storageKey, JSON.stringify(data));
   }
 
-  // Function to load form data
   function loadFormData(wrapper, data) {
     const inputs = wrapper.querySelectorAll("input:not(.radio)");
     inputs.forEach((input) => {
@@ -162,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to hide all wrappers
   function hideAllWrappers() {
     creditCardWrapper.classList.remove("active");
     bankWrapper.classList.remove("active");
@@ -170,24 +159,19 @@ document.addEventListener("DOMContentLoaded", function () {
     applePayWrapper.classList.remove("active");
   }
 
-  // Function to setup radio buttons
   function setupRadioButtons(wrapper) {
     const radioButtons = wrapper.querySelectorAll(".radio");
     radioButtons.forEach((radio) => {
       const label = radio.nextElementSibling;
 
       label.addEventListener("click", function () {
-        // Remove active states from all labels
         document.querySelectorAll("label").forEach((l) => {
           l.classList.remove("radio-label-active");
         });
 
-        // Add active state to clicked label
         label.classList.add("radio-label-active");
 
-        // Handle different payment methods
         if (radio.id.endsWith("1")) {
-          // Credit Card
           saveFormData(bankWrapper, "bankData");
           clearForm(bankWrapper);
           hideAllWrappers();
@@ -198,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .querySelectorAll('label[for$="1"]')
             .forEach((l) => l.classList.add("radio-label-active"));
         } else if (radio.id.endsWith("2")) {
-          // Google Pay
           saveFormData(bankWrapper, "bankData");
           saveFormData(creditCardWrapper, "creditCardData");
           clearForm(bankWrapper);
@@ -210,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .querySelectorAll('label[for$="2"]')
             .forEach((l) => l.classList.add("radio-label-active"));
         } else if (radio.id.endsWith("3")) {
-          // Bank
           saveFormData(creditCardWrapper, "creditCardData");
           clearForm(creditCardWrapper);
           hideAllWrappers();
@@ -221,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .querySelectorAll('label[for$="3"]')
             .forEach((l) => l.classList.add("radio-label-active"));
         } else if (radio.id.endsWith("4")) {
-          // Apple Pay
           saveFormData(bankWrapper, "bankData");
           saveFormData(creditCardWrapper, "creditCardData");
           clearForm(bankWrapper);
@@ -237,13 +218,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initialize all wrappers
   setupRadioButtons(creditCardWrapper);
   setupRadioButtons(bankWrapper);
   setupRadioButtons(googlePayWrapper);
   setupRadioButtons(applePayWrapper);
 
-  // Set initial state
   hideAllWrappers();
   switch (savedMethod) {
     case "bank":
@@ -273,7 +252,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .forEach((l) => l.classList.add("radio-label-active"));
   }
 
-  // Save form data on input (only for wrappers with input fields)
   [creditCardWrapper, bankWrapper].forEach((wrapper) => {
     wrapper.addEventListener("input", function (e) {
       if (
