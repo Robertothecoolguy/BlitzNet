@@ -218,6 +218,7 @@ a.payment-method:hover {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -238,12 +239,11 @@ a.payment-method:hover {
 .emodal-content {
   background-color: #444444;
   padding: 20px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 3px #dfc5c5;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 5px;
   position: relative;
   height: 480px;
@@ -251,8 +251,8 @@ a.payment-method:hover {
 }
 .eclose-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 20px;
   font-size: 24px;
   cursor: pointer;
   color: #fff;
@@ -281,6 +281,7 @@ a.payment-method:hover {
   display: flex;
   flex-direction: column;
   background-color: white;
+  height: 320px;
   width: 400px;
   padding: 20px;
   border-radius: 8px;
@@ -317,14 +318,17 @@ a.payment-method:hover {
 
 .payment-options {
   display: flex;
-  gap: 10px;
 
+  gap: 10px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
   padding-bottom: 100px;
 }
 
 .payment-option {
   display: flex;
-  width: 50%;
+
+  width: 45%;
   align-items: center;
   padding: 10px;
   background-color: #f0f0f0;
@@ -485,10 +489,6 @@ a.payment-method:hover {
   font-size: 20px;
 }
 
-.edit-sign-up-contents {
-  width: 430px;
-}
-
 .etitle {
   margin-bottom: 30px;
 }
@@ -502,6 +502,10 @@ a.payment-method:hover {
   display: flex;
   padding: 5px 0;
   bottom: 50px;
+}
+
+.dn {
+  display: none;
 }
 
 .einput-group-1 {
@@ -561,6 +565,10 @@ a.payment-method:hover {
   pointer-events: none;
 }
 
+.fields {
+  margin-bottom: 60px;
+}
+
 .einput-box div {
   height: 24px;
   width: 70px;
@@ -599,10 +607,8 @@ a.payment-method:hover {
   color: #f8f9fb;
 }
 
-.einput-box {
-  width: 100%;
-  margin-right: 12px;
-  position: relative;
+.es2 {
+  display: none;
 }
 
 .einput-box label {
@@ -653,6 +659,12 @@ a.payment-method:hover {
   background-color: #ffffff;
   cursor: not-allowed;
   color: #666;
+}
+
+.ept2 {
+  display: none;
+  text-align: start;
+  width: 100%;
 }
 
 .einput-box .change-btn {
@@ -772,11 +784,84 @@ a.payment-method:hover {
     height: 250px;
     width: 250px;
   }
+
+  .emodal-content {
+    height: 350px;
+    width: 350px;
+  }
+
+  .edit-sign-up-contents {
+    overflow-y: auto;
+  }
+  .eptitle {
+    display: none;
+  }
+  .ept2 {
+    display: block;
+  }
+
+  .fields {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  .einput-group {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .einput-box .change-btn,
+  .einput-box .generate-btn {
+    top: 17.5%;
+  }
+  .einput-submit {
+    display: none;
+  }
+  .es2 {
+    position: absolute;
+    display: block;
+    bottom: -60px;
+  }
 }
 
 @media screen and (max-width: 970px) {
   .hero h2 {
     margin-bottom: 50px;
+  }
+
+  .modal-content {
+    width: 325px;
+    height: 275px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modalexplain {
+    font-size: 14px;
+  }
+
+  .add-btn {
+    height: 2.5em;
+  }
+
+  .payment-option {
+    height: 45px;
+  }
+
+  .bibank {
+    font-size: 16px;
+  }
+
+  .card-logo {
+    width: 24px;
+    height: 15px;
+    margin-right: 10px;
+  }
+
+  .payment-option span {
+    font-size: 14px;
   }
 }
 
@@ -906,8 +991,24 @@ a.payment-method:hover {
   .question-container {
     margin-top: 40px;
   }
+
+  .emodal-content {
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+  }
 }
 
+@media screen and (max-width: 410px) {
+  .modal-content {
+    width: 300px;
+    padding: 10px;
+  }
+
+  .payment-option span {
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 371px) {
   .span-1 {
     font-weight: 400;

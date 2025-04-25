@@ -1,4 +1,4 @@
-const editProfileLink = document.getElementById("edit-profile-link");
+const editProfileLinks = document.querySelectorAll(".edit-profile-link");
 const editProfileModal = document.getElementById("editProfileModal");
 const closeEditBtn = document.getElementById("closeEditModal");
 const changeButtons = document.querySelectorAll(".change-btn");
@@ -7,16 +7,18 @@ const inputs = document.querySelectorAll(".einput-box input");
 const form = document.querySelector(".edit-sign-up-contents");
 const welcomeText = document.querySelector(".hero h2");
 
-editProfileLink.addEventListener("click", function (e) {
-  e.preventDefault();
-  editProfileModal.classList.add("show");
-  inputs.forEach((input) => {
-    const changeBtn = input.nextElementSibling.nextElementSibling;
-    if (changeBtn.classList.contains("change-btn")) {
-      input.disabled = true;
-      changeBtn.classList.remove("hidden");
-      input.value = "";
-    }
+editProfileLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    editProfileModal.classList.add("show");
+    inputs.forEach((input) => {
+      const changeBtn = input.nextElementSibling.nextElementSibling;
+      if (changeBtn.classList.contains("change-btn")) {
+        input.disabled = true;
+        changeBtn.classList.remove("hidden");
+        input.value = "";
+      }
+    });
   });
 });
 

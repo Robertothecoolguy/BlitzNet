@@ -26,7 +26,7 @@
       <h2>Welcome, astralExplorer</h2>
       <div class="mid-hero">
         <div class="dashboard-section">
-          <a href="" class="box one" id="edit-profile-link">Edit Profile</a>
+          <a href="" class="box one edit-profile-link">Edit Profile</a>
           <a href="/modify-subscriptions.html" class="box two"
             >Modify Subscriptions</a
           >
@@ -125,7 +125,7 @@
       </div>
       <a class="payment-method">Edit Payment Method</a>
       <div class="dashboard-section ds2">
-        <a href="" class="box one" id="edit-profile-link">Edit Profile</a>
+        <a href="" class="box one edit-profile-link">Edit Profile</a>
         <a href="/modify-subscriptions.html" class="box two"
           >Modify Subscriptions</a
         >
@@ -201,8 +201,9 @@
     <div class="emodal" id="editProfileModal">
       <div class="emodal-content">
         <button class="eclose-btn" id="closeEditModal">×</button>
+        <h2 class="eptitle ept2">Edit Profile</h2>
         <form class="edit-sign-up-contents" action="" method="post">
-          <h2>Edit Profile</h2>
+          <h2 class="eptitle">Edit Profile</h2>
           <div class="fields">
             <div class="einput-group">
               <div class="einput-box">
@@ -215,6 +216,7 @@
                 <i class="bi bi-person-fill"></i>
                 <div class="change-btn">Change?</div>
               </div>
+
               <div class="einput-box">
                 <label>Username</label>
                 <input type="text" placeholder="astralExplorer" class="name" />
@@ -246,9 +248,13 @@
                 <div class="change-btn">Change?</div>
               </div>
             </div>
+            <input
+              type="submit"
+              class="einput-submit es2"
+              value="Save Changes" />
           </div>
-          <input type="submit" class="einput-submit" value="Save Changes" />
         </form>
+        <input type="submit" class="einput-submit" value="Save Changes" />
       </div>
     </div>
 
@@ -273,6 +279,7 @@
             <i class="bibank bi-bank2"></i>
             <span>** 4444</span>
           </label>
+
           <label class="payment-option">
             <input type="radio" name="payment-method" />
             <img
