@@ -26,6 +26,7 @@ body::before {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 80%;
+  max-width: 2560px;
   margin-inline: auto;
   align-items: center;
   margin-top: 75px;
@@ -44,11 +45,11 @@ body::before {
   font-size: 40px;
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
-  white-space: nowrap;
 }
 
 .hero-p {
   font-size: 22px;
+  max-width: 70ch;
   line-height: 1.5;
 }
 
@@ -88,7 +89,6 @@ body::before {
   justify-content: center;
   align-items: center;
   margin-top: 250px;
-
   width: 100%;
 }
 
@@ -106,6 +106,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   width: 80%;
+  max-width: 2560px;
   height: 122px;
   background: linear-gradient(
     90deg,
@@ -138,7 +139,7 @@ body::before {
   height: 2.5em;
   font-size: 20px;
   font-weight: 600;
-  background: rgba(223, 197, 197, 0.37);
+  background: rgba(224, 211, 211, 0.37);
   border: none;
   outline: none;
   place-content: center;
@@ -146,7 +147,6 @@ body::before {
 
 .product-section {
   margin-top: 150px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,6 +166,7 @@ body::before {
   margin-top: 100px;
   row-gap: 100px;
   width: 80%;
+  max-width: 2000px;
 }
 
 .card-title,
@@ -184,11 +185,12 @@ body::before {
   display: flex;
   flex-direction: column;
   width: 40%;
+  max-width: 650px;
   height: 620px;
 }
 
 .span-1 {
-  background-image: linear-gradient(to right, #88b1b9, #fff);
+  background-image: linear-gradient(to right, #88b1b9, #acb7ba);
   color: transparent;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -216,7 +218,6 @@ body::before {
 .product-img {
   width: auto;
   object-fit: contain;
-
   height: 250px;
 }
 
@@ -243,7 +244,7 @@ li {
 }
 
 .span-2 {
-  background-image: linear-gradient(to right, #dfc5c5, #fff);
+  background-image: linear-gradient(to right, #dfc5c5, #f1c4c4);
   color: transparent;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -303,6 +304,7 @@ li {
 
 .product-card-bundle {
   width: 80%;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   margin-inline: auto;
@@ -328,7 +330,9 @@ li {
   margin-top: 100px;
   text-align: start;
   align-self: flex-start;
+  margin-inline: auto;
   margin-left: 10%;
+  max-width: 2560px;
 }
 
 .video-container {
@@ -339,33 +343,51 @@ li {
   align-items: center;
   justify-content: space-between;
   row-gap: 35px;
+  max-width: 2560px;
 }
 
 iframe {
   height: calc(34 * 9px);
   width: calc(34 * 16px);
+  transition: opacity 0.5s ease, max-height 0.5s ease;
 }
 
-#ch {
-  display: none;
+.hidden-video {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-#ch:checked ~ .vc2 {
-  width: 100%;
+.hidden-video.visible {
+  opacity: 1;
+  max-height: 315px;
+  pointer-events: auto;
+}
+
+.see-more-button-box {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
-  row-gap: 35px;
+  justify-content: center;
+  margin-inline: auto;
 }
 
-#ch:checked ~ .see-more-button-box {
-  display: none;
+.see-more-button {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 6em;
+  background: #2e2e2e;
+  border: 1px solid #e0e3e7;
+  align-self: center;
+  place-content: center;
+  z-index: 999;
+  cursor: pointer;
+  border-radius: 0px;
 }
 
-.vc2 {
+.see-more-button-box.hidden {
   display: none;
-  margin-top: 0px;
 }
 
 #ch2 {
@@ -387,25 +409,6 @@ iframe {
 
 .see-more-questions {
   display: none;
-}
-
-.see-more-button {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 20px;
-  width: 6em;
-  background: #2e2e2e;
-  border: 1px solid #e0e3e7;
-  align-self: center;
-  cursor: pointer;
-}
-
-.see-more-button-box {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-inline: auto;
 }
 
 .see-more-button-box-2 {
@@ -438,15 +441,16 @@ iframe {
 
 .frequently-asked-questions-title {
   align-self: flex-start;
-  margin-left: 10%;
-
+  margin-inline: auto;
   margin-top: 50px;
+  margin-left: 10%;
 }
 
 .question-container {
   margin-top: 50px;
   width: 80%;
   align-self: center;
+  max-width: 2560px;
 }
 
 .qna {
@@ -474,6 +478,7 @@ iframe {
   margin-block: 50px;
   width: 100%;
 }
+
 .sphere {
   position: relative;
   width: 300px; /* Larger sphere */
@@ -490,14 +495,102 @@ iframe {
   transform-origin: center;
 }
 
-@media screen and (max-width: 1373px) {
+@media screen and (max-width: 2781px) {
+  .video-container {
+    column-gap: 30px;
+  }
+}
+
+@media screen and (min-width: 2115px) and (max-width: 2800px) {
+  .video-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  iframe {
+    width: calc(30 * 16px);
+    height: calc(30 * 9px);
+  }
+
+  .hidden-video:nth-child(5),
+  .hidden-video:nth-child(6) {
+    opacity: 1;
+    max-height: 315px;
+    overflow: visible;
+    pointer-events: auto;
+    width: calc(30 * 16px);
+    height: calc(30 * 9px);
+  }
+
+  .hidden-video.visible {
+    opacity: 1;
+    max-height: 315px;
+    overflow: visible;
+    pointer-events: auto;
+    width: calc(30 * 16px);
+    height: calc(30 * 9px);
+  }
+}
+
+@media screen and (min-width: 1941px) and (max-width: 2114px) {
+  iframe {
+    height: calc(43 * 9px);
+    width: calc(43 * 16px);
+  }
+}
+
+@media screen and (min-width: 1809px) and (max-width: 1941px) {
+  iframe {
+    height: calc(42 * 9px);
+    width: calc(42 * 16px);
+  }
+}
+
+@media screen and (min-width: 1700px) and (max-width: 1809px) {
+  iframe {
+    height: calc(41 * 9px);
+    width: calc(41 * 16px);
+  }
+}
+
+@media screen and (min-width: 1663px) and (max-width: 1700px) {
+  iframe {
+    height: calc(40 * 9px);
+    width: calc(40 * 16px);
+  }
+}
+
+@media screen and (max-width: 1475px) {
+  .hero-h2 {
+    font-size: 36px;
+  }
+
+  iframe {
+    height: calc(34 * 9px);
+    width: calc(34 * 16px);
+  }
+}
+
+@media screen and (max-width: 1418px) {
+  .hero-h2 {
+    font-size: 36px;
+  }
+
   iframe {
     height: calc(33 * 9px);
     width: calc(33 * 16px);
   }
 }
 
-@media screen and (max-width: 1343px) {
+@media screen and (max-width: 1373px) {
+  .hidden-video.visible {
+    max-height: calc(33 * 9px);
+  }
+}
+
+@media screen and (max-width: 1357px) {
   .hero-h2 {
     font-size: 34px;
     font-weight: 600;
@@ -529,7 +622,7 @@ iframe {
   }
 }
 
-@media screen and (max-width: 1231px) {
+@media screen and (max-width: 1237px) {
   iframe {
     height: calc(28 * 9px);
     width: calc(28 * 16px);
@@ -589,7 +682,7 @@ iframe {
   }
 
   .hero-h2 {
-    font-size: 30px;
+    font-size: 33px;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(46, 46, 46, 1);
   }
@@ -642,7 +735,6 @@ iframe {
     width: 100%;
     margin-inline: auto;
     display: flex;
-
     flex-direction: column;
   }
 
@@ -697,9 +789,7 @@ iframe {
   }
 }
 
-/* For screens 1024px and below */
 @media screen and (max-width: 1024px) {
-  /* Hero Section */
   .hero {
     height: 500px;
     margin-top: 50px;
@@ -751,7 +841,6 @@ iframe {
     width: 95%;
   }
 
-  /* Product Section */
   .shop {
     width: 95%;
     margin-top: 75px;
@@ -765,7 +854,6 @@ iframe {
     height: 200px;
   }
 
-  /* Customer Reviews */
   .customer-reviews-title {
     margin-left: 2.5%;
     margin-top: 0px;
@@ -784,7 +872,6 @@ iframe {
     width: calc(28 * 16px);
   }
 
-  /* FAQs */
   .question-container {
     width: 95%;
   }
@@ -830,9 +917,7 @@ iframe {
   }
 }
 
-/* For screens 876px and below */
 @media screen and (max-width: 876px) {
-  /* Hero Section */
   .hero {
     height: 550px;
   }
@@ -855,7 +940,6 @@ iframe {
     width: 90%;
   }
 
-  /* Sub-Hero Section */
   .satellite {
     height: 120px;
   }
@@ -879,7 +963,6 @@ iframe {
     font-size: 14px;
   }
 
-  /* Product Section */
   .shop {
     width: 100%;
     row-gap: 75px;
@@ -909,16 +992,6 @@ iframe {
   iframe {
     height: calc(24 * 9px);
     width: calc(24 * 16px);
-  }
-
-  /* FAQs */
-  .question {
-    font-size: 26px;
-  }
-
-  .answer,
-  .list-answer {
-    font-size: 18px;
   }
 
   .frequently-asked-questions-title,
@@ -984,7 +1057,6 @@ iframe {
   }
 }
 
-/* For screens 555px and below */
 @media screen and (max-width: 555px) {
   .sphere-box {
     margin-top: 50px;
@@ -1012,14 +1084,13 @@ iframe {
     font-size: 16px;
   }
 
-  /* Sub-Hero Section */
   .sub-hero {
     margin-top: 200px;
   }
 
   .learn-rec {
     position: relative;
-    flex-direction: column; /* Stack content */
+    flex-direction: column;
     text-align: start;
     padding: 15px;
     padding-bottom: 100px;
@@ -1046,13 +1117,12 @@ iframe {
     margin-right: 0px;
   }
 
-  /* Product Section */
   .product-section {
     margin-top: 75px;
   }
 
   .shop {
-    flex-direction: column; /* Stack cards */
+    flex-direction: column;
     margin-top: 50px;
     row-gap: 50px;
   }
@@ -1128,7 +1198,6 @@ iframe {
     font-size: 16px;
   }
 
-  /* FAQs */
   .frequently-asked-questions {
     margin-top: 50px;
   }
@@ -1170,9 +1239,7 @@ iframe {
   }
 }
 
-/* For screens 425px and below */
 @media screen and (max-width: 425px) {
-  /* Hero Section */
   .hero {
     height: 650px;
   }
@@ -1208,7 +1275,6 @@ iframe {
     height: 250px;
   }
 
-  /* Sub-Hero Section */
   .satellite {
     height: 80px;
   }
@@ -1256,8 +1322,6 @@ iframe {
   .see-more-button {
     max-width: 140px;
   }
-
-  /* FAQs */
 
   .customer-reviews-title {
     font-size: 21px;

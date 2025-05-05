@@ -355,25 +355,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const addPhoneButton = document.querySelector(".add-member-box .add-button");
   if (addPhoneButton) {
-    console.log("Phone button found, attaching listener");
     addPhoneButton.addEventListener("click", (e) => {
-      console.log("Phone button clicked");
-      const productId = "2";
+      const productId = "3";
+      if (cartItems.has("2")) {
+        cartItems.delete("2");
+        delete productQuantities["2"];
+      }
       if (cartItems.has(productId)) {
         alert("Open your cart to see if you want to add more lines");
       } else {
         cartItems.add(productId);
         saveCart();
-        alert("Line added to cart");
+        alert("Additional line added to cart");
       }
     });
-  } else {
-    console.warn("Phone button not found");
   }
-
-  window.addEventListener("cartUpdated", () => {
-    cartItems = new Set(JSON.parse(localStorage.getItem("cartItems")) || []);
-  });
 
   handleSubscription(".modem.sub", "modem");
   handleSubscription(".phone.sub", "phone");

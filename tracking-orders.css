@@ -7,6 +7,7 @@
   row-gap: 50px;
   margin-inline: auto;
   width: 80%;
+  max-width: 2560px;
   margin-bottom: 100px;
 }
 
@@ -28,6 +29,7 @@
   box-shadow: 0 0 20px #f8f9fb;
   padding: 30px;
   cursor: pointer;
+  max-width: 2048px;
   border-radius: 20px;
 }
 

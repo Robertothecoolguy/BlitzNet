@@ -783,3 +783,7 @@
     margin-bottom: 15px;
   }
 }
+
+.threehide {
+  display: none;
+}

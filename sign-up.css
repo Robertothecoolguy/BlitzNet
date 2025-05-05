@@ -18,6 +18,7 @@
   height: 375px;
   justify-content: space-between;
   width: 60%;
+  max-width: 936px;
   padding: 25px;
   padding-inline: 20px;
   margin-inline: auto;
@@ -371,9 +372,6 @@ b {
 
   .logo-title-2 p {
     max-width: 40ch;
-  }
-
-  .confirm {
   }
 }
 

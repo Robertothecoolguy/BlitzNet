@@ -6,6 +6,7 @@
   align-content: center;
   justify-content: center;
   width: 80%;
+  max-width: 2560px;
 }
 
 body::before {
@@ -451,23 +452,28 @@ a.payment-method:hover {
 .frequently-asked-questions {
   margin-top: 100px;
   width: 100%;
+
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: flex-start;
   justify-content: center;
+
   margin-bottom: 50px;
 }
 
 .frequently-asked-questions-title {
   align-self: flex-start;
-  margin-left: 10%;
-
+  width: 80%;
+  max-width: 2560px;
+  margin-inline: auto;
   margin-top: 50px;
 }
 
 .question-container {
   margin-top: 50px;
   width: 80%;
+  max-width: 2560px;
   align-self: center;
 }
 

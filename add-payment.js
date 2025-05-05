@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="input-group">
           <div class="input-box">
             <input type="text" class="name" placeholder="Bank Name" required />
-            <i class="bi bi-calendar3"></i>
+            <i class="bi bi-bank2"></i>
           </div>
         </div>
         <button class="pay-now-button" type="submit">Add & Turn On Autopay</button>

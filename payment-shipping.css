@@ -85,7 +85,7 @@
 
 .wrapper {
   width: 45%;
-  max-width: 850px;
+  max-width: 576px;
   padding: 25px;
   height: 1090px;
   margin: auto;
@@ -453,6 +453,11 @@ img {
     width: 98%; /* Almost full width */
     padding: 10px; /* Minimal padding */
     box-shadow: 0 0 10px #f8f9fb; /* Softer shadow */
+  }
+
+  .wrapper h4 {
+    padding-top: 20px;
+    padding-bottom: 0px;
   }
 
   .input-box .name {
