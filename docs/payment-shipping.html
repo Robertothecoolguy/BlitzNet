@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/payment-shipping.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <title>Shipping</title>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+      <form class="wrapper credit-card-layout">
+        <h2>Payment and Shipping</h2>
+        <h4>Account</h4>
+        <div class="input-group">
+          <div class="input-box full-name-box">
+            <input type="text" placeholder="Full Name" required class="name" />
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="input-box credit-specific">
+            <input
+              type="text"
+              placeholder="Name on Card"
+              required
+              class="name" />
+            <i class="bi bi-person-vcard-fill"></i>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" placeholder="Address" required class="name" />
+            <i class="bi bi-house-door-fill"></i>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" placeholder="City" required class="name" />
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+        </div>
+        <div class="input-group payment-details">
+          <div class="input-box">
+            <h4>Payment Details</h4>
+            <input type="radio" placeholder="pay" class="radio" id="bc1" />
+            <label for="bc1"
+              ><span
+                ><i class="bi2 bi-credit-card-2-back-fill"></i>Credit Card</span
+              ></label
+            >
+            <input type="radio" placeholder="pay" class="radio" id="bc2" />
+            <label for="bc2"
+              ><span><i class="bi2 bi-google"></i>Pay</span></label
+            >
+            <input type="radio" placeholder="pay" class="radio" id="bc3" />
+            <label for="bc3"
+              ><span><i class="bi2 bi-bank2"></i>Bank</span></label
+            >
+            <input type="radio" placeholder="pay" class="radio" id="bc4" />
+            <label for="bc4"
+              ><span><i class="bi2 bi-apple"></i>Pay</span></label
+            >
+          </div>
+        </div>
+        <div class="input-group credit-specific">
+          <div class="input-box">
+            <input
+              type="tel"
+              class="name"
+              placeholder="Card Number 1111-2222-3333-4444"
+              required />
+            <i class="bi bi-credit-card-2-back"></i>
+          </div>
+        </div>
+        <div class="input-group credit-specific">
+          <div class="input-box">
+            <input type="tel" class="name" placeholder="CVC 632" required />
+            <i class="bi bi-credit-card-2-front-fill"></i>
+          </div>
+        </div>
+        <div class="input-group credit-specific bottom-input">
+          <div class="input-box">
+            <input
+              type="number"
+              class="name"
+              placeholder="EXP Month"
+              required />
+            <i class="bi bi-calendar3"></i>
+          </div>
+          <div class="input-box credit-specific">
+            <input type="number" class="name" placeholder="EXP Year" required />
+            <i class="bi bi-calendar4"></i>
+          </div>
+        </div>
+        <div class="price-wrapper">
+          <div class="price-nav">
+            <a href="/my-orders.html">Modify order</a>
+            <h2 class="price-details-title">Price Details</h2>
+          </div>
+          <div class="price-details">
+            <div class="total-product-container">
+              <p class="total-product-price-title">Total Product Price</p>
+              <p class="total-product-price">$0</p>
+            </div>
+            <div class="total-sub-container">
+              <div class="total-subscriptions-title">Total Subscriptions</div>
+              <div class="total-subscriptions">$0/month</div>
+            </div>
+            <div class="total-savings-container">
+              <p class="total-savings-title">Bundle Savings</p>
+              <p class="total-savings">$0</p>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-title">Shipping</p>
+              <p class="shipping">$0</p>
+            </div>
+            <div class="total-order-container">
+              <h2 class="order-total-title">Order Total</h2>
+              <h2 class="order-total">$0</h2>
+            </div>
+            <div class="month-starts">(month starts when activated)</div>
+          </div>
+          <button class="pay-now-button" type="submit">Pay Now</button>
+        </div>
+      </form>
+    </div>
+    <div id="sign-in-placeholder" class="login-popup"></div>
+    <div id="footer-placeholder"></div>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="footer-modal.js"></script>
+    <script src="sign-in.js"></script>
+    <script src="/payment-shipping.js"></script>
+  </body>
+</html>
