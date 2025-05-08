@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/modify-subscriptions.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta
+      name="google-signin-client_id"
+      content="981923150238-i71lds8e1lm59hdeq6o42u9sfgje04m9.apps.googleusercontent.com" />
+    <title>Modify Subscriptions</title>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <h2 class="title">Modify Subscriptions</h2>
+
+    <div class="hero">
+      <h3 class="subtitle">
+        BlitzNet Modem <span class="span-1">Internet</span>
+      </h3>
+      <div class="add-member-box-2">
+        <div class="add-button"><i class="bi-2 bi-plus-lg"></i></div>
+        <div class="add-member-text-2">Buy a subscription & modem</div>
+      </div>
+      <div class="modem sub">
+        <div class="customer-container">
+          <table class="subscription-table">
+            <thead>
+              <tr class="table-head">
+                <th>#</th>
+                <th>Owner</th>
+                <th>WiFi Name</th>
+                <th>Pause</th>
+                <th>Cancel Subscription</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-row">
+                <td>1</td>
+                <td>
+                  James Gregory
+                  <span class="span-wifi change-owner">(change)</span>
+                </td>
+                <td>
+                  HomeWiFi_5G
+                  <span class="span-wifi change-wifi">(change name)</span>
+                </td>
+                <td><i class="bi bi-pause-btn-fill"></i></td>
+                <td><button class="cancel">Cancel</button></td>
+              </tr>
+              <tr class="table-row">
+                <td>2</td>
+                <td>
+                  Sam Palmer
+                  <span class="span-wifi change-owner">(change)</span>
+                </td>
+                <td>
+                  OfficeNet_24
+                  <span class="span-wifi change-wifi">(change name)</span>
+                </td>
+                <td><i class="bi bi-pause-btn-fill"></i></td>
+                <td><button class="cancel">Cancel</button></td>
+              </tr>
+              <tr class="table-row">
+                <td>3</td>
+                <td>
+                  Susan Baker
+                  <span class="span-wifi change-owner">(change)</span>
+                </td>
+                <td>
+                  CafeConnect
+                  <span class="span-wifi change-wifi">(change name)</span>
+                </td>
+                <td><i class="bi bi-pause-btn-fill"></i></td>
+                <td><button class="cancel">Cancel</button></td>
+              </tr>
+              <tr class="table-row">
+                <td>4</td>
+                <td>
+                  Jessica Williams
+                  <span class="span-wifi change-owner">(change)</span>
+                </td>
+                <td>
+                  ApartmentLink
+                  <span class="span-wifi change-wifi">(change name)</span>
+                </td>
+                <td><i class="bi bi-pause-btn-fill"></i></td>
+                <td><button class="cancel">Cancel</button></td>
+              </tr>
+              <tr class="table-row">
+                <td>5</td>
+                <td>
+                  Alan Stevens
+                  <span class="span-wifi change-owner">(change)</span>
+                </td>
+                <td>
+                  GuestWiFi_X
+                  <span class="span-wifi change-wifi">(change name)</span>
+                </td>
+                <td><i class="bi bi-pause-btn-fill"></i></td>
+                <td><button class="cancel">Cancel</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="subtitle">Global <span class="span-2">Cell Data</span></h3>
+      <div class="add-member-box">
+        <div class="add-button"><i class="bi-3 bi-plus-lg"></i></div>
+        <div class="add-member-text">Buy a line & SIM card</div>
+      </div>
+      <div class="phone sub">
+        <div class="customer-container">
+          <table class="subscription-table">
+            <thead>
+              <tr class="table-head">
+                <th>#</th>
+                <th>Owner</th>
+                <th>Phone</th>
+                <th>Pause</th>
+                <th>Cancel Line</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-row">
+                <td>1</td>
+                <td>James Gregory</td>
+                <td>iPhone 16e</td>
+                <td><i class="bi bi-pause-circle"></i></td>
+                <td><i class="bi bi-x"></i></td>
+              </tr>
+              <tr class="table-row">
+                <td>2</td>
+                <td>Sam Palmer</td>
+                <td>iPhone 15</td>
+                <td><i class="bi bi-pause-circle"></i></td>
+                <td><i class="bi bi-x"></i></td>
+              </tr>
+              <tr class="table-row">
+                <td>3</td>
+                <td>Susan Baker</td>
+                <td>iPhone 16 Pro</td>
+                <td><i class="bi bi-pause-circle"></i></td>
+                <td><i class="bi bi-x"></i></td>
+              </tr>
+              <tr class="table-row">
+                <td>4</td>
+                <td>Jessica Williams</td>
+                <td>iPhone 16 Plus</td>
+                <td><i class="bi bi-pause-circle"></i></td>
+                <td><i class="bi bi-x"></i></td>
+              </tr>
+              <tr class="table-row">
+                <td>5</td>
+                <td>Alan Stevens</td>
+                <td>iPhone 15 Plus</td>
+                <td><i class="bi bi-pause-circle"></i></td>
+                <td><i class="bi bi-x"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="sign-in-placeholder" class="login-popup"></div>
+    <div id="footer-placeholder"></div>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="footer-modal.js"></script>
+    <script src="sign-in.js"></script>
+    <script src="modify-subscriptions.js"></script>
+  </body>
+</html>
